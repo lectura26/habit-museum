@@ -2,8 +2,14 @@ import { getDailyQuote } from '@/lib/quotes'
 import { toLocalDateString } from '@/lib/dates'
 
 export default async function DailyQuote() {
-  const today = toLocalDateString()
-  const quote = await getDailyQuote(today)
+  let quote = null
+  try {
+    const today = toLocalDateString()
+    quote = await getDailyQuote(today)
+  } catch {
+    // stoic_quotes table may not exist yet — fail silently
+    return null
+  }
 
   if (!quote) return null
 

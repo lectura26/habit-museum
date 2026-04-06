@@ -5,6 +5,7 @@ import TopBar from '@/app/components/top-bar'
 import TodayClient from './today-client'
 
 export default async function TodayPage() {
+  try {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) redirect('/login')
@@ -22,7 +23,7 @@ export default async function TodayPage() {
     { data: todosToday },
     { data: streakData },
   ] = await Promise.all([
-    supabase.from('profiles').select('*').eq('id', user.id).single(),
+    supabase.from('profiles').select('*').eq('user_id', user.id).single(),
     supabase.from('habits').select('*').eq('user_id', user.id).eq('is_active', true).order('display_order'),
     supabase.from('habit_completions').select('*').eq('user_id', user.id).eq('date', today),
     supabase.from('user_metrics').select('*').eq('user_id', user.id).eq('is_active', true).order('display_order'),
@@ -69,4 +70,17 @@ export default async function TodayPage() {
       />
     </div>
   )
+  } catch (err) {
+    // Re-throw Next.js redirect/notFound — they use throw internally.
+    if (err && typeof err === 'object' && 'digest' in err) throw err
+    console.error('[TodayPage] render error:', err)
+    return (
+      <div style={{ padding: '60px 28px', background: 'var(--bg-primary)', minHeight: '100dvh' }}>
+        <p className="font-ui" style={{ fontSize: 13, color: 'var(--text-muted)' }}>
+          Something went wrong loading your day.{' '}
+          <a href="/today" style={{ color: 'var(--accent-dark)' }}>Try again</a>
+        </p>
+      </div>
+    )
+  }
 }
