@@ -17,12 +17,21 @@ export default function LoginPage() {
     setError('')
     setLoading(true)
 
-    const timeout = new Promise<never>((_, reject) =>
-      setTimeout(() => reject(new Error('timeout')), LOGIN_TIMEOUT_MS)
-    )
+    // AbortController drives the timeout — if it fires before the action
+    // resolves we show the timeout message; otherwise we clear it and proceed.
+    const controller = new AbortController()
+    const timeoutId  = setTimeout(() => {
+      controller.abort()
+      setError('CONNECTION TIMEOUT. PLEASE TRY AGAIN.')
+      setLoading(false)
+    }, LOGIN_TIMEOUT_MS)
 
     try {
-      const result = await Promise.race([loginAction(email, password), timeout])
+      const result = await loginAction(email, password)
+      clearTimeout(timeoutId)
+
+      // Ignore the result if the timeout already fired and aborted.
+      if (controller.signal.aborted) return
 
       if (result.error) {
         setError(result.error)
@@ -30,21 +39,19 @@ export default function LoginPage() {
         return
       }
 
-      // Full page navigation so the browser sends all cookies to the proxy
-      // and the server correctly sees the new session on the next request.
-      window.location.href = result.destination!
+      if (result.success && result.destination) {
+        // Full-page navigation — browser sends all cookies so the proxy
+        // sees the new session correctly on the very next request.
+        window.location.href = result.destination
+      }
     } catch (err) {
-      // This catch only fires for the timeout race rejection or an
-      // unexpected client-side throw — the server action itself now
-      // always returns { error } instead of throwing.
-      if (err instanceof Error && err.message === 'timeout') {
-        setError('CONNECTION TIMEOUT. PLEASE TRY AGAIN.')
-      } else {
+      clearTimeout(timeoutId)
+      if (!controller.signal.aborted) {
         const msg = err instanceof Error ? err.message : String(err)
         console.error('[login] unexpected catch:', msg, err)
         setError(msg || 'SOMETHING WENT WRONG. PLEASE TRY AGAIN.')
+        setLoading(false)
       }
-      setLoading(false)
     }
   }
 

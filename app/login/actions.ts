@@ -3,6 +3,7 @@
 import { createClient } from '@/lib/supabase/server'
 
 interface LoginResult {
+  success?: true
   error?: string
   destination?: string
 }
@@ -48,7 +49,7 @@ export async function loginAction(email: string, password: string): Promise<Logi
     const destination = habits && habits.length > 0 ? '/today' : '/onboarding'
     console.log('[loginAction] Redirecting to:', destination)
 
-    return { destination }
+    return { success: true, destination }
   } catch (err) {
     // Catches anything createClient() or the Supabase calls might throw
     // (e.g. invalid URL, network failure). Returning the real message here
