@@ -9,6 +9,7 @@ export default function LoginPage() {
   const [password, setPassword] = useState('')
   const [error, setError]       = useState('')
   const [loading, setLoading]   = useState(false)
+  const [debug, setDebug]       = useState('')
 
   async function handleLogin(e: React.FormEvent) {
     e.preventDefault()
@@ -16,7 +17,10 @@ export default function LoginPage() {
     setLoading(true)
 
     const supabase = createClient()
-    const { error: authError } = await supabase.auth.signInWithPassword({ email, password })
+    const { data, error: authError } = await supabase.auth.signInWithPassword({ email, password })
+
+    console.log('AUTH RESULT:', JSON.stringify({ data, error: authError }))
+    setDebug(JSON.stringify({ data, error: authError }, null, 2))
 
     if (authError) {
       setError(authError.message)
@@ -116,6 +120,25 @@ export default function LoginPage() {
           >
             {loading ? 'ENTERING...' : 'ENTER'}
           </button>
+
+          {debug && (
+            <pre
+              style={{
+                marginTop: 24,
+                padding: 12,
+                background: '#f0ebe3',
+                border: '1px solid #C4A882',
+                fontSize: 11,
+                lineHeight: 1.5,
+                overflowX: 'auto',
+                whiteSpace: 'pre-wrap',
+                wordBreak: 'break-all',
+                color: '#3D2B1A',
+              }}
+            >
+              {debug}
+            </pre>
+          )}
         </form>
 
         <p
