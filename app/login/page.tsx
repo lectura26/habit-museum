@@ -2,9 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { loginAction } from './actions'
-
-const LOGIN_TIMEOUT_MS = 10_000
+import { createClient } from '@/lib/supabase/client'
 
 export default function LoginPage() {
   const [email, setEmail]       = useState('')
@@ -17,42 +15,16 @@ export default function LoginPage() {
     setError('')
     setLoading(true)
 
-    // AbortController drives the timeout — if it fires before the action
-    // resolves we show the timeout message; otherwise we clear it and proceed.
-    const controller = new AbortController()
-    const timeoutId  = setTimeout(() => {
-      controller.abort()
-      setError('CONNECTION TIMEOUT. PLEASE TRY AGAIN.')
+    const supabase = createClient()
+    const { error: authError } = await supabase.auth.signInWithPassword({ email, password })
+
+    if (authError) {
+      setError(authError.message)
       setLoading(false)
-    }, LOGIN_TIMEOUT_MS)
-
-    try {
-      const result = await loginAction(email, password)
-      clearTimeout(timeoutId)
-
-      // Ignore the result if the timeout already fired and aborted.
-      if (controller.signal.aborted) return
-
-      if (result.error) {
-        setError(result.error)
-        setLoading(false)
-        return
-      }
-
-      if (result.success && result.destination) {
-        // Full-page navigation — browser sends all cookies so the proxy
-        // sees the new session correctly on the very next request.
-        window.location.href = result.destination
-      }
-    } catch (err) {
-      clearTimeout(timeoutId)
-      if (!controller.signal.aborted) {
-        const msg = err instanceof Error ? err.message : String(err)
-        console.error('[login] unexpected catch:', msg, err)
-        setError(msg || 'SOMETHING WENT WRONG. PLEASE TRY AGAIN.')
-        setLoading(false)
-      }
+      return
     }
+
+    window.location.href = '/today'
   }
 
   return (
@@ -69,7 +41,6 @@ export default function LoginPage() {
       }}
     >
       <div style={{ width: '100%', maxWidth: 360 }}>
-        {/* Logo */}
         <div style={{ textAlign: 'center', marginBottom: 60 }}>
           <h1
             className="font-display"
@@ -86,15 +57,10 @@ export default function LoginPage() {
           </h1>
         </div>
 
-        {/* Form */}
         <form onSubmit={handleLogin}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 32, marginBottom: 40 }}>
             <div>
-              <label
-                className="label"
-                htmlFor="email"
-                style={{ display: 'block', marginBottom: 8 }}
-              >
+              <label className="label" htmlFor="email" style={{ display: 'block', marginBottom: 8 }}>
                 EMAIL
               </label>
               <input
@@ -110,11 +76,7 @@ export default function LoginPage() {
             </div>
 
             <div>
-              <label
-                className="label"
-                htmlFor="password"
-                style={{ display: 'block', marginBottom: 8 }}
-              >
+              <label className="label" htmlFor="password" style={{ display: 'block', marginBottom: 8 }}>
                 PASSWORD
               </label>
               <input
@@ -156,7 +118,6 @@ export default function LoginPage() {
           </button>
         </form>
 
-        {/* Sign up link */}
         <p
           className="font-ui"
           style={{
