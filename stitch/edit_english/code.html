@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;family=Playfair+Display:ital,wght@0,400;1,400&amp;family=Noto+Serif&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#d2c4ba",
+                        "primary-fixed": "#fcddc3",
+                        "surface-container-highest": "#e5e2dd",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#3d2b0f",
+                        "surface-variant": "#e5e2dd",
+                        "on-secondary-container": "#755f42",
+                        "on-tertiary-fixed": "#281901",
+                        "surface-container-high": "#ebe8e3",
+                        "on-secondary-fixed": "#281903",
+                        "background": "#fcf9f4",
+                        "on-primary-fixed-variant": "#574330",
+                        "inverse-primary": "#dfc1a9",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f6f3ee",
+                        "secondary-fixed": "#fcdeba",
+                        "secondary-container": "#f9dbb7",
+                        "surface-bright": "#fcf9f4",
+                        "on-background": "#1c1c19",
+                        "surface-container": "#f0ede9",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#574329",
+                        "inverse-on-surface": "#f3f0eb",
+                        "primary": "#261707",
+                        "on-surface-variant": "#4e453e",
+                        "secondary-fixed-dim": "#dfc29f",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#281809",
+                        "tertiary-fixed-dim": "#e0c29a",
+                        "surface": "#fcf9f4",
+                        "on-tertiary-fixed-variant": "#584325",
+                        "inverse-surface": "#31302d",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#fddeb5",
+                        "secondary": "#715b3e",
+                        "on-tertiary-container": "#ac926d",
+                        "primary-container": "#3d2b1a",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#dcdad5",
+                        "on-primary-container": "#ac917b",
+                        "outline": "#80756d",
+                        "on-surface": "#1c1c19",
+                        "tertiary": "#261701",
+                        "primary-fixed-dim": "#dfc1a9",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#715a46"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Playfair Display", "serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .custom-hairline { border-color: #E8E0D4; }
+        body { -webkit-font-smoothing: antialiased; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-[#FAF7F2] text-[#261707] font-body selection:bg-secondary-container">
+<!-- TopAppBar -->
+<header class="flex flex-col items-start w-full pt-12 pb-8 px-8 max-w-none bg-[#FAF7F2]">
+<div class="flex justify-between w-full items-baseline mb-2">
+<span class="text-xs font-normal tracking-[0.2em] text-[#755f42]">HABIT MUSEUM</span>
+<span class="text-[10px] uppercase tracking-[0.2em] font-normal text-[#755f42]">MONDAY, APRIL 6, 2026</span>
+</div>
+<h1 class="font-headline italic text-[22px] leading-tight text-[#261707]">Good evening, Rasmus.</h1>
+</header>
+<!-- Main Canvas -->
+<main class="max-w-[390px] mx-auto px-8 pb-32 space-y-16">
+<!-- Section: YOUR HABITS -->
+<section class="space-y-6">
+<h2 class="text-[10px] uppercase tracking-[0.2em] font-normal text-on-secondary-container">YOUR HABITS</h2>
+<div class="space-y-0 border-t custom-hairline">
+<div class="flex justify-between items-center py-4 border-b custom-hairline">
+<span class="text-sm">Morning Meditation</span>
+<div class="flex items-center gap-4">
+<span class="text-[10px] tracking-[0.1em] font-bold">ACTIVE</span>
+<span class="text-[#755f42] text-[10px] tracking-[0.1em]">PAUSE</span>
+<span class="text-[#755f42] ml-2 text-lg">×</span>
+</div>
+</div>
+<div class="flex justify-between items-center py-4 border-b custom-hairline">
+<span class="text-sm">Reading 20 min.</span>
+<div class="flex items-center gap-4">
+<span class="text-[#755f42] text-[10px] tracking-[0.1em]">ACTIVE</span>
+<span class="text-[10px] tracking-[0.1em] font-bold">PAUSE</span>
+<span class="text-[#755f42] ml-2 text-lg">×</span>
+</div>
+</div>
+<div class="flex justify-between items-center py-4 border-b custom-hairline">
+<span class="text-sm">Training</span>
+<div class="flex items-center gap-4">
+<span class="text-[10px] tracking-[0.1em] font-bold">ACTIVE</span>
+<span class="text-[#755f42] text-[10px] tracking-[0.1em]">PAUSE</span>
+<span class="text-[#755f42] ml-2 text-lg">×</span>
+</div>
+</div>
+</div>
+<div class="flex gap-0 pt-2">
+<input class="w-full bg-transparent border-b custom-hairline py-3 text-xs tracking-widest placeholder:text-[#d2c4ba] focus:outline-none focus:border-primary transition-colors border-0" placeholder="NEW HABIT" type="text"/>
+<button class="bg-primary-container text-surface px-5 flex items-center justify-center text-lg">+</button>
+</div>
+</section>
+<!-- Section: YOUR CHECK-IN -->
+<section class="space-y-6">
+<h2 class="text-[10px] uppercase tracking-[0.2em] font-normal text-on-secondary-container">YOUR CHECK-IN</h2>
+<div class="space-y-0 border-t custom-hairline">
+<div class="flex justify-between items-center py-4 border-b custom-hairline">
+<div class="flex flex-col">
+<span class="text-sm">Sleep Quality</span>
+<span class="text-[9px] text-[#755f42] tracking-wider uppercase">SCALE 1-10</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-[10px] tracking-[0.1em] font-bold">ACTIVE</span>
+<span class="text-[#755f42] text-[10px] tracking-[0.1em]">PAUSE</span>
+</div>
+</div>
+<div class="flex justify-between items-center py-4 border-b custom-hairline">
+<div class="flex flex-col">
+<span class="text-sm">Energy Level</span>
+<span class="text-[9px] text-[#755f42] tracking-wider uppercase">SCALE 1-10</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-[10px] tracking-[0.1em] font-bold">ACTIVE</span>
+<span class="text-[#755f42] text-[10px] tracking-[0.1em]">PAUSE</span>
+</div>
+</div>
+</div>
+<button class="w-full py-4 text-[10px] tracking-[0.2em] font-normal border border-outline text-primary hover:bg-surface-container-low transition-colors">ADD METRIC</button>
+</section>
+<!-- Section: YOUR TO-DO -->
+<section class="space-y-6">
+<h2 class="text-[10px] uppercase tracking-[0.2em] font-normal text-on-secondary-container">YOUR TO-DO</h2>
+<div class="flex flex-col items-center py-8 bg-surface-container-low border border-transparent">
+<div class="flex items-center gap-12">
+<button class="text-2xl font-light text-secondary hover:text-primary">−</button>
+<span class="font-headline italic text-4xl">3</span>
+<button class="text-2xl font-light text-secondary hover:text-primary">+</button>
+</div>
+<p class="mt-6 font-headline italic text-[13px] text-[#755f42]">You can always adjust this on the day.</p>
+</div>
+</section>
+<!-- Section: WEEKLY GOALS -->
+<section class="space-y-6">
+<h2 class="text-[10px] uppercase tracking-[0.2em] font-normal text-on-secondary-container">WEEKLY GOALS</h2>
+<div class="space-y-0 border-t custom-hairline">
+<div class="flex justify-between items-center py-4 border-b custom-hairline">
+<div class="flex items-center gap-4">
+<div class="w-4 h-4 border border-outline flex items-center justify-center"></div>
+<span class="text-sm">Complete 5 workouts</span>
+</div>
+<span class="text-[#755f42] text-lg">×</span>
+</div>
+<div class="flex justify-between items-center py-4 border-b custom-hairline">
+<div class="flex items-center gap-4">
+<div class="w-4 h-4 border border-outline flex items-center justify-center"></div>
+<span class="text-sm">No alcohol on weekdays</span>
+</div>
+<span class="text-[#755f42] text-lg">×</span>
+</div>
+</div>
+<div class="flex gap-0 pt-2">
+<input class="w-full bg-transparent border-b custom-hairline py-3 text-xs tracking-widest placeholder:text-[#d2c4ba] focus:outline-none border-0" placeholder="NEW GOAL" type="text"/>
+<button class="bg-primary-container text-surface px-5 flex items-center justify-center text-lg">+</button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 h-20 bg-[#FAF7F2]/80 backdrop-blur-xl border-t border-[#E5E2DD]">
+<a class="flex flex-col items-center justify-center text-[#755f42] hover:bg-[#F6F3EE] transition-colors w-full h-full" href="#">
+<span class="text-[10px] uppercase tracking-[0.2em] font-normal">TODAY</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#755f42] hover:bg-[#F6F3EE] transition-colors w-full h-full" href="#">
+<span class="text-[10px] uppercase tracking-[0.2em] font-normal">REVIEW</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#755f42] hover:bg-[#F6F3EE] transition-colors w-full h-full" href="#">
+<span class="text-[10px] uppercase tracking-[0.2em] font-normal">DASHBOARD</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#261707] font-bold w-full h-full border-b-2 border-primary" href="#">
+<span class="text-[10px] uppercase tracking-[0.2em]">EDIT</span>
+</a>
+</nav>
+</body></html>

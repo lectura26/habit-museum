@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Inter:wght@300;400;600;700&amp;family=Cormorant+Garamond:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#fe8b70",
+                    "error": "#a54731",
+                    "on-primary-fixed": "#4f3b29",
+                    "inverse-surface": "#0e0e0c",
+                    "surface-variant": "#eae9de",
+                    "primary-fixed": "#fcddc3",
+                    "secondary-fixed-dim": "#dbd3c8",
+                    "surface-container": "#f6f4ec",
+                    "on-primary-fixed-variant": "#6d5743",
+                    "on-background": "#373831",
+                    "surface": "#fffcf7",
+                    "tertiary-fixed-dim": "#eae5db",
+                    "surface-tint": "#715a46",
+                    "primary": "#715a46",
+                    "on-primary-container": "#634e3a",
+                    "outline-variant": "#babab0",
+                    "on-tertiary": "#ffffff",
+                    "on-surface": "#373831",
+                    "secondary": "#69645a",
+                    "inverse-primary": "#ffe0c6",
+                    "surface-container-low": "#fcf9f3",
+                    "on-error-container": "#742410",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed": "#433f36",
+                    "on-secondary-fixed-variant": "#605b52",
+                    "tertiary-dim": "#5b5850",
+                    "primary-dim": "#644e3b",
+                    "on-surface-variant": "#64655d",
+                    "on-primary": "#fff6f1",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed": "#e9e1d5",
+                    "surface-container-highest": "#eae9de",
+                    "tertiary-container": "#f9f3e9",
+                    "on-tertiary-fixed-variant": "#69665e",
+                    "surface-dim": "#e4e3d7",
+                    "on-tertiary-container": "#5f5b54",
+                    "surface-bright": "#fffcf7",
+                    "tertiary": "#67645c",
+                    "tertiary-fixed": "#f9f3e9",
+                    "inverse-on-surface": "#9e9d98",
+                    "on-secondary-container": "#565148",
+                    "primary-fixed-dim": "#edcfb6",
+                    "secondary-dim": "#5d584e",
+                    "secondary-container": "#e9e1d5",
+                    "on-tertiary-fixed": "#4c4942",
+                    "background": "#fffcf7",
+                    "surface-container-high": "#f0eee5",
+                    "surface-container-lowest": "#ffffff",
+                    "error-dim": "#5c1202",
+                    "outline": "#818178",
+                    "primary-container": "#fcddc3"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Newsreader", "serif"],
+                    "body": ["Inter", "sans-serif"],
+                    "label": ["Inter", "sans-serif"],
+                    "serif": ["Cormorant Garamond", "serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #fffcf7; font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .hairline { border: 0.5px solid #babab0; }
+        .tracking-editorial { letter-spacing: 0.25em; }
+        .tracking-technical { letter-spacing: 0.15em; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-[#FAF7F2] dark:bg-[#1A1A18] text-[#3D2B1A] flex justify-between items-end w-full px-12 py-10 max-w-none fixed top-0 z-50">
+<div class="font-serif uppercase tracking-[0.25em] text-2xl">
+            MANDAG, 6. APRIL 2026
+        </div>
+<div class="flex gap-12 items-center">
+<nav class="hidden md:flex gap-10">
+<span class="text-[#715A46] dark:text-[#BABAB0] pb-1 uppercase tracking-technical text-[10px] hover:underline decoration-1 underline-offset-8 transition-opacity duration-300 active:opacity-70">TODAY</span>
+<span class="text-[#715A46] dark:text-[#BABAB0] pb-1 uppercase tracking-technical text-[10px] hover:underline decoration-1 underline-offset-8 transition-opacity duration-300 active:opacity-70">REVIEW</span>
+<span class="text-[#3D2B1A] dark:text-[#F0EAE0] font-bold pb-1 uppercase tracking-technical text-[10px] border-b border-[#3D2B1A] transition-opacity duration-300 active:opacity-70">DASHBOARD</span>
+<span class="text-[#715A46] dark:text-[#BABAB0] pb-1 uppercase tracking-technical text-[10px] hover:underline decoration-1 underline-offset-8 transition-opacity duration-300 active:opacity-70">EDIT</span>
+</nav>
+<div class="font-serif uppercase tracking-[0.25em] text-sm text-[#3D2B1A] dark:text-[#F0EAE0]">
+                GOD AFTEN, RASMUS.
+            </div>
+</div>
+</header>
+<main class="pt-40 pb-32 px-12 max-w-7xl mx-auto min-h-screen">
+<!-- Segmented Control Tabs -->
+<div class="flex border-b border-outline-variant mb-16 overflow-x-auto no-scrollbar">
+<div class="flex gap-16">
+<button class="pb-4 border-b-2 border-primary text-primary font-bold tracking-technical text-[11px] uppercase">HABITS</button>
+<button class="pb-4 border-b-2 border-transparent text-outline hover:text-primary transition-colors tracking-technical text-[11px] uppercase">CHECK-IN</button>
+<button class="pb-4 border-b-2 border-transparent text-outline hover:text-primary transition-colors tracking-technical text-[11px] uppercase">TO-DO</button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<!-- Hero Stats & Graph Section -->
+<section class="lg:col-span-8 flex flex-col gap-12">
+<div class="flex flex-col gap-2">
+<h1 class="font-serif text-9xl leading-none text-primary">68%</h1>
+<p class="font-label tracking-editorial text-sm uppercase text-outline">AVERAGE COMPLETION</p>
+</div>
+<!-- Abstract Line Graph -->
+<div class="w-full h-80 bg-surface-container-low p-10 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="font-label text-[10px] tracking-technical uppercase text-outline">WEEKLY PROGRESSION</span>
+<span class="font-label text-[10px] tracking-technical uppercase text-primary">MAR 31 — APR 06</span>
+</div>
+<div class="relative flex-1 mt-8 mb-4 border-l border-b border-outline-variant/30">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 1000 300">
+<path d="M0,250 Q100,220 200,240 T400,180 T600,120 T800,80 T1000,40" fill="none" stroke="#715a46" stroke-width="1.5"></path>
+<circle cx="200" cy="240" fill="#715a46" r="3"></circle>
+<circle cx="400" cy="180" fill="#715a46" r="3"></circle>
+<circle cx="600" cy="120" fill="#715a46" r="3"></circle>
+<circle cx="800" cy="80" fill="#715a46" r="3"></circle>
+<circle cx="1000" cy="40" fill="#715a46" r="4"></circle>
+</svg>
+</div>
+<div class="flex justify-between font-label text-[9px] tracking-technical text-outline pt-2">
+<span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span>
+</div>
+</div>
+</section>
+<!-- Sidebar Contextual Image & Summary -->
+<aside class="lg:col-span-4 flex flex-col gap-8">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden">
+<img alt="Architectural morning" class="w-full h-full object-cover filter grayscale contrast-125 opacity-90" data-alt="Minimalist architectural space with morning sunlight casting long geometric shadows on clean concrete walls and a single ceramic vessel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUYVmsNIK1KJzLugVWtnRimEUuuxxzIvlOoLgOYNtCTVP52dSg4TfO4AB3dHvl-YJVG7_1rmh4ArHqo1pPVqYp9iagB1RAhHu6WpxHESHHPNR3iH9Z7V7M4FLrWB-COiicAKcNxeI-PulvSmm-SgrqCfgx1qgF1L2b8GZxnBlk6j936MK3HBLijwYwE9II_dQ6z4r_nVoOHS4t3bSlLZhybvJVLldRHlKuEuymj-7m4glHEJtOlS_GrlQVeEapnY8yjKzBtEzqgF4"/>
+</div>
+<div class="p-8 bg-primary text-on-primary">
+<p class="font-serif text-2xl italic leading-tight mb-4">"Silence is the ultimate expression of strength."</p>
+<p class="font-label tracking-technical text-[10px] uppercase opacity-70">— ANONYMOUS CURATOR</p>
+</div>
+</aside>
+</div>
+<!-- Habit List Section -->
+<section class="mt-24">
+<header class="flex justify-between items-end border-b border-outline-variant pb-6 mb-12">
+<h2 class="font-label tracking-editorial text-lg uppercase text-on-surface">HABIT PERFORMANCE</h2>
+<span class="font-label tracking-technical text-[10px] uppercase text-outline">Sorted by consistency</span>
+</header>
+<div class="flex flex-col gap-px bg-outline-variant/20">
+<!-- Habit Row -->
+<div class="bg-surface py-12 flex flex-col md:flex-row justify-between items-start md:items-center group hover:bg-surface-container-low transition-colors px-4">
+<div class="md:w-1/3">
+<p class="font-label tracking-technical text-[10px] uppercase text-outline mb-1">01</p>
+<h3 class="font-serif text-3xl text-on-surface group-hover:text-primary transition-colors">DEEP WORK MEDITATION</h3>
+</div>
+<div class="grid grid-cols-3 gap-16 md:w-2/3 mt-8 md:mt-0">
+<div>
+<p class="font-label tracking-technical text-[9px] uppercase text-outline mb-2">COMPLETION</p>
+<p class="font-serif text-2xl">92%</p>
+</div>
+<div>
+<p class="font-label tracking-technical text-[9px] uppercase text-outline mb-2">CURRENT STREAK</p>
+<p class="font-serif text-2xl">14 DAYS</p>
+</div>
+<div>
+<p class="font-label tracking-technical text-[9px] uppercase text-outline mb-2">BEST STREAK</p>
+<p class="font-serif text-2xl">45 DAYS</p>
+</div>
+</div>
+</div>
+<!-- Habit Row -->
+<div class="bg-surface py-12 flex flex-col md:flex-row justify-between items-start md:items-center group hover:bg-surface-container-low transition-colors px-4">
+<div class="md:w-1/3">
+<p class="font-label tracking-technical text-[10px] uppercase text-outline mb-1">02</p>
+<h3 class="font-serif text-3xl text-on-surface group-hover:text-primary transition-colors">ARCHITECTURAL SKETCHING</h3>
+</div>
+<div class="grid grid-cols-3 gap-16 md:w-2/3 mt-8 md:mt-0">
+<div>
+<p class="font-label tracking-technical text-[9px] uppercase text-outline mb-2">COMPLETION</p>
+<p class="font-serif text-2xl">74%</p>
+</div>
+<div>
+<p class="font-label tracking-technical text-[9px] uppercase text-outline mb-2">CURRENT STREAK</p>
+<p class="font-serif text-2xl">5 DAYS</p>
+</div>
+<div>
+<p class="font-label tracking-technical text-[9px] uppercase text-outline mb-2">BEST STREAK</p>
+<p class="font-serif text-2xl">12 DAYS</p>
+</div>
+</div>
+</div>
+<!-- Habit Row -->
+<div class="bg-surface py-12 flex flex-col md:flex-row justify-between items-start md:items-center group hover:bg-surface-container-low transition-colors px-4">
+<div class="md:w-1/3">
+<p class="font-label tracking-technical text-[10px] uppercase text-outline mb-1">03</p>
+<h3 class="font-serif text-3xl text-on-surface group-hover:text-primary transition-colors">MORNING COLD PLUNGE</h3>
+</div>
+<div class="grid grid-cols-3 gap-16 md:w-2/3 mt-8 md:mt-0">
+<div>
+<p class="font-label tracking-technical text-[9px] uppercase text-outline mb-2">COMPLETION</p>
+<p class="font-serif text-2xl">38%</p>
+</div>
+<div>
+<p class="font-label tracking-technical text-[9px] uppercase text-outline mb-2">CURRENT STREAK</p>
+<p class="font-serif text-2xl">1 DAY</p>
+</div>
+<div>
+<p class="font-label tracking-technical text-[9px] uppercase text-outline mb-2">BEST STREAK</p>
+<p class="font-serif text-2xl">22 DAYS</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-16 py-8 bg-[#FAF7F2] dark:bg-[#1A1A18] border-t border-[#E8E0D4] dark:border-[#373831]">
+<a class="text-[#715A46] dark:text-[#BABAB0] pb-1 font-sans uppercase tracking-[0.2em] text-[10px] transition-all duration-500 ease-in-out" href="#">TODAY</a>
+<a class="text-[#715A46] dark:text-[#BABAB0] pb-1 font-sans uppercase tracking-[0.2em] text-[10px] transition-all duration-500 ease-in-out" href="#">REVIEW</a>
+<a class="text-[#3D2B1A] dark:text-[#F0EAE0] border-b border-[#3D2B1A] pb-1 font-sans uppercase tracking-[0.2em] text-[10px] transition-all duration-500 ease-in-out" href="#">DASHBOARD</a>
+<a class="text-[#715A46] dark:text-[#BABAB0] pb-1 font-sans uppercase tracking-[0.2em] text-[10px] transition-all duration-500 ease-in-out" href="#">EDIT</a>
+</nav>
+<!-- Global Footer Line -->
+<footer class="px-12 py-10 border-t border-outline-variant flex justify-between items-center bg-surface">
+<p class="font-label tracking-technical text-[9px] uppercase text-outline">© 2026 CURATORIAL OS</p>
+<p class="font-label tracking-technical text-[9px] uppercase text-outline">STRENGTH IN DISCIPLINE</p>
+</footer>
+</body></html>

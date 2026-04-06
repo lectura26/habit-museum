@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;family=Playfair+Display:ital,wght@0,400;1,400&amp;family=Noto+Serif:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline-variant": "#d2c4ba",
+                    "primary-fixed": "#fcddc3",
+                    "surface-container-highest": "#e5e2dd",
+                    "error": "#ba1a1a",
+                    "tertiary-container": "#3d2b0f",
+                    "surface-variant": "#e5e2dd",
+                    "on-secondary-container": "#755f42",
+                    "on-tertiary-fixed": "#281901",
+                    "surface-container-high": "#ebe8e3",
+                    "on-secondary-fixed": "#281903",
+                    "background": "#fcf9f4",
+                    "on-primary-fixed-variant": "#574330",
+                    "inverse-primary": "#dfc1a9",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-low": "#f6f3ee",
+                    "secondary-fixed": "#fcdeba",
+                    "secondary-container": "#f9dbb7",
+                    "surface-bright": "#fcf9f4",
+                    "on-background": "#1c1c19",
+                    "surface-container": "#f0ede9",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed-variant": "#574329",
+                    "inverse-on-surface": "#f3f0eb",
+                    "primary": "#261707",
+                    "on-surface-variant": "#4e453e",
+                    "secondary-fixed-dim": "#dfc29f",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed": "#281809",
+                    "tertiary-fixed-dim": "#e0c29a",
+                    "surface": "#fcf9f4",
+                    "on-tertiary-fixed-variant": "#584325",
+                    "inverse-surface": "#31302d",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#fddeb5",
+                    "secondary": "#715b3e",
+                    "on-tertiary-container": "#ac926d",
+                    "primary-container": "#3d2b1a",
+                    "on-error": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "surface-dim": "#dcdad5",
+                    "on-primary-container": "#ac917b",
+                    "outline": "#80756d",
+                    "on-surface": "#1c1c19",
+                    "tertiary": "#261701",
+                    "primary-fixed-dim": "#dfc1a9",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#715a46"
+            },
+            "borderRadius": {
+                    "none": "0px",
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "0px"
+            },
+            "fontFamily": {
+                    "headline": ["Playfair Display", "serif"],
+                    "body": ["Inter", "sans-serif"],
+                    "label": ["Inter", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fcf9f4;
+            color: #1c1c19;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        input:focus {
+            outline: none;
+            border-bottom-color: #261707 !important;
+        }
+        ::placeholder {
+            color: #80756d;
+            opacity: 0.6;
+        }
+    </style>
+<style>
+        body {
+          min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+<main class="w-full max-w-[390px] flex flex-col items-stretch space-y-16">
+<!-- Header Section -->
+<header class="pt-12">
+<h1 class="font-headline text-[48px] leading-tight tracking-tight text-primary">
+                HABIT MUSEUM
+            </h1>
+<p class="mt-4 font-label text-[10px] uppercase tracking-[0.2em] text-on-secondary-container">
+                CURATING YOUR BETTER SELF
+            </p>
+</header>
+<!-- Form Section -->
+<form class="flex flex-col space-y-10" onsubmit="return false;">
+<div class="space-y-12">
+<!-- Email Field -->
+<div class="flex flex-col">
+<label class="font-label text-[10px] uppercase tracking-[0.2em] text-on-secondary-container mb-2">
+                        EMAIL
+                    </label>
+<input class="w-full bg-transparent border-0 border-b border-[#E8E0D4] py-3 px-0 font-body text-primary focus:ring-0 placeholder:font-body" placeholder="your@email.com" type="email"/>
+</div>
+<!-- Password Field -->
+<div class="flex flex-col">
+<label class="font-label text-[10px] uppercase tracking-[0.2em] text-on-secondary-container mb-2">
+                        PASSWORD
+                    </label>
+<input class="w-full bg-transparent border-0 border-b border-[#E8E0D4] py-3 px-0 font-body text-primary focus:ring-0 placeholder:font-body" placeholder="••••••••" type="password"/>
+</div>
+<!-- Confirm Password Field -->
+<div class="flex flex-col">
+<label class="font-label text-[10px] uppercase tracking-[0.2em] text-on-secondary-container mb-2">
+                        CONFIRM PASSWORD
+                    </label>
+<input class="w-full bg-transparent border-0 border-b border-[#E8E0D4] py-3 px-0 font-body text-primary focus:ring-0 placeholder:font-body" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<!-- Action Section -->
+<div class="pt-8 flex flex-col space-y-8">
+<button class="w-full h-14 bg-primary-container text-surface font-body font-normal text-[14px] uppercase tracking-[0.1em] transition-colors hover:bg-secondary" type="submit">
+                    CREATE ACCOUNT
+                </button>
+<div class="text-center">
+<a class="font-body text-[12px] text-on-secondary-container hover:text-primary transition-colors inline-block pb-1 border-b border-transparent hover:border-outline-variant" href="#">
+                        Already have an account? <span class="font-bold">Log in</span>
+</a>
+</div>
+</div>
+</form>
+<!-- Decorative Curator Note -->
+<footer class="pt-16 pb-12 opacity-40">
+<div class="border-t border-outline-variant/20 pt-8">
+<p class="font-headline italic text-[14px] text-primary text-center leading-relaxed">
+                    "Every habit is a brick in the museum of your life."
+                </p>
+</div>
+</footer>
+</main>
+</body></html>

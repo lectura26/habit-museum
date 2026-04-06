@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&amp;family=Inter:wght@300;400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#fe8b70",
+                    "error": "#a54731",
+                    "on-primary-fixed": "#4f3b29",
+                    "inverse-surface": "#0e0e0c",
+                    "surface-variant": "#eae9de",
+                    "primary-fixed": "#fcddc3",
+                    "secondary-fixed-dim": "#dbd3c8",
+                    "surface-container": "#f6f4ec",
+                    "on-primary-fixed-variant": "#6d5743",
+                    "on-background": "#373831",
+                    "surface": "#fffcf7",
+                    "tertiary-fixed-dim": "#eae5db",
+                    "surface-tint": "#715a46",
+                    "primary": "#715a46",
+                    "on-primary-container": "#634e3a",
+                    "outline-variant": "#babab0",
+                    "on-tertiary": "#ffffff",
+                    "on-surface": "#373831",
+                    "secondary": "#69645a",
+                    "inverse-primary": "#ffe0c6",
+                    "surface-container-low": "#fcf9f3",
+                    "on-error-container": "#742410",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed": "#433f36",
+                    "on-secondary-fixed-variant": "#605b52",
+                    "tertiary-dim": "#5b5850",
+                    "primary-dim": "#644e3b",
+                    "on-surface-variant": "#64655d",
+                    "on-primary": "#fff6f1",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed": "#e9e1d5",
+                    "surface-container-highest": "#eae9de",
+                    "tertiary-container": "#f9f3e9",
+                    "on-tertiary-fixed-variant": "#69665e",
+                    "surface-dim": "#e4e3d7",
+                    "on-tertiary-container": "#5f5b54",
+                    "surface-bright": "#fffcf7",
+                    "tertiary": "#67645c",
+                    "tertiary-fixed": "#f9f3e9",
+                    "inverse-on-surface": "#9e9d98",
+                    "on-secondary-container": "#565148",
+                    "primary-fixed-dim": "#edcfb6",
+                    "secondary-dim": "#5d584e",
+                    "secondary-container": "#e9e1d5",
+                    "on-tertiary-fixed": "#4c4942",
+                    "background": "#fffcf7",
+                    "surface-container-high": "#f0eee5",
+                    "surface-container-lowest": "#ffffff",
+                    "error-dim": "#5c1202",
+                    "outline": "#818178",
+                    "primary-container": "#fcddc3"
+            },
+            "borderRadius": {
+                    "none": "0px",
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "0px"
+            },
+            "fontFamily": {
+                    "serif": ["Cormorant Garamond", "serif"],
+                    "headline": ["Newsreader", "serif"],
+                    "body": ["Inter", "sans-serif"],
+                    "label": ["Inter", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .serif-display { font-family: 'Cormorant Garamond', serif; }
+        input[type="range"] {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 1px;
+            background: #babab0;
+            outline: none;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 12px;
+            height: 12px;
+            background: #3D2B1A;
+            cursor: pointer;
+            border-radius: 0;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="bg-[#FAF7F2] dark:bg-[#1A1A18] text-[#3D2B1A] dark:text-[#F0EAE0] flex justify-between items-end w-full px-12 py-10 max-w-none docked full-width top-0 rounded-none border-none flat no shadows z-50 sticky">
+<div class="font-serif uppercase tracking-[0.25em] text-2xl">MANDAG, 6. APRIL 2026</div>
+<div class="font-serif uppercase tracking-[0.25em] text-[#3D2B1A] dark:text-[#F0EAE0]">GOD AFTEN, RASMUS.</div>
+</header>
+<main class="max-w-[1200px] mx-auto px-12 py-24 space-y-40">
+<!-- HABITS SECTION -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<div class="md:col-span-4">
+<h2 class="font-body uppercase tracking-[0.15em] text-sm text-outline mb-2">HABITS</h2>
+<p class="font-serif text-5xl italic text-primary">3 of 5</p>
+</div>
+<div class="md:col-span-8 space-y-8">
+<div class="flex items-center justify-between border-b border-outline-variant pb-4">
+<span class="font-body uppercase tracking-[0.1em] text-sm">Morning Meditation (20m)</span>
+<div class="w-6 h-6 border border-on-surface flex items-center justify-center bg-primary"></div>
+</div>
+<div class="flex items-center justify-between border-b border-outline-variant pb-4">
+<span class="font-body uppercase tracking-[0.1em] text-sm line-through opacity-40">Cold Exposure</span>
+<div class="w-6 h-6 border border-outline-variant"></div>
+</div>
+<div class="flex items-center justify-between border-b border-outline-variant pb-4">
+<span class="font-body uppercase tracking-[0.1em] text-sm">Hydration Protocol</span>
+<div class="w-6 h-6 border border-on-surface flex items-center justify-center bg-primary"></div>
+</div>
+<div class="flex items-center justify-between border-b border-outline-variant pb-4">
+<span class="font-body uppercase tracking-[0.1em] text-sm line-through opacity-40">Deep Work Session</span>
+<div class="w-6 h-6 border border-outline-variant"></div>
+</div>
+<div class="flex items-center justify-between border-b border-outline-variant pb-4">
+<span class="font-body uppercase tracking-[0.1em] text-sm">Evening Reflection</span>
+<div class="w-6 h-6 border border-on-surface flex items-center justify-center bg-primary"></div>
+</div>
+</div>
+</section>
+<!-- CHECK-IN SECTION -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<div class="md:col-span-4">
+<h2 class="font-body uppercase tracking-[0.15em] text-sm text-outline">CHECK-IN</h2>
+</div>
+<div class="md:col-span-8 space-y-16">
+<div class="space-y-6">
+<label class="block font-body uppercase tracking-[0.1em] text-xs">Sleep Quality</label>
+<input class="cursor-pointer" max="100" min="0" type="range" value="75"/>
+<div class="flex justify-between text-[10px] uppercase tracking-widest text-outline">
+<span>Restless</span>
+<span>Restored</span>
+</div>
+</div>
+<div class="space-y-6">
+<label class="block font-body uppercase tracking-[0.1em] text-xs">Overall Mood</label>
+<input class="cursor-pointer" max="100" min="0" type="range" value="60"/>
+<div class="flex justify-between text-[10px] uppercase tracking-widest text-outline">
+<span>Heavy</span>
+<span>Luminous</span>
+</div>
+</div>
+<div class="space-y-6">
+<label class="block font-body uppercase tracking-[0.1em] text-xs">Gratitude &amp; Observations</label>
+<textarea class="w-full bg-transparent border border-outline-variant p-6 font-serif text-xl focus:ring-0 focus:border-primary outline-none transition-colors" placeholder="Type your reflections..." rows="4"></textarea>
+</div>
+</div>
+</section>
+<!-- TO-DO SECTION -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-32">
+<div class="md:col-span-4">
+<h2 class="font-body uppercase tracking-[0.15em] text-sm text-outline">TO-DO</h2>
+</div>
+<div class="md:col-span-8 space-y-24">
+<!-- Yesterday -->
+<div>
+<h3 class="font-serif italic text-2xl mb-8">Yesterday's Intentions</h3>
+<div class="space-y-6">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-outline-variant pb-6">
+<span class="font-body text-sm uppercase tracking-[0.05em]">Quarterly Strategy Document Finalization</span>
+<div class="flex gap-4">
+<button class="px-4 py-1 text-[10px] uppercase tracking-widest bg-primary text-on-primary">DONE</button>
+<button class="px-4 py-1 text-[10px] uppercase tracking-widest border border-outline-variant text-outline hover:text-on-surface hover:border-on-surface transition-all">PARTIAL</button>
+<button class="px-4 py-1 text-[10px] uppercase tracking-widest border border-outline-variant text-outline hover:text-on-surface hover:border-on-surface transition-all">NOT DONE</button>
+</div>
+</div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-outline-variant pb-6">
+<span class="font-body text-sm uppercase tracking-[0.05em]">Internal Team Alignment Sync</span>
+<div class="flex gap-4">
+<button class="px-4 py-1 text-[10px] uppercase tracking-widest border border-outline-variant text-outline hover:text-on-surface hover:border-on-surface transition-all">DONE</button>
+<button class="px-4 py-1 text-[10px] uppercase tracking-widest border border-outline-variant text-outline hover:text-on-surface hover:border-on-surface transition-all">PARTIAL</button>
+<button class="px-4 py-1 text-[10px] uppercase tracking-widest border border-on-surface text-on-surface">NOT DONE</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Tomorrow -->
+<div>
+<h3 class="font-serif italic text-2xl mb-8">Tomorrow's Priorities</h3>
+<div class="space-y-6">
+<div class="flex items-center gap-6 group">
+<span class="font-serif text-3xl opacity-20 group-focus-within:opacity-100 transition-opacity">01</span>
+<input class="w-full bg-transparent border-b border-outline-variant py-4 font-body uppercase tracking-[0.1em] text-sm focus:ring-0 focus:border-on-surface outline-none" placeholder="Primary Focus..." type="text"/>
+</div>
+<div class="flex items-center gap-6 group">
+<span class="font-serif text-3xl opacity-20 group-focus-within:opacity-100 transition-opacity">02</span>
+<input class="w-full bg-transparent border-b border-outline-variant py-4 font-body uppercase tracking-[0.1em] text-sm focus:ring-0 focus:border-on-surface outline-none" placeholder="Secondary Action..." type="text"/>
+</div>
+<div class="flex items-center gap-6 group">
+<span class="font-serif text-3xl opacity-20 group-focus-within:opacity-100 transition-opacity">03</span>
+<input class="w-full bg-transparent border-b border-outline-variant py-4 font-body uppercase tracking-[0.1em] text-sm focus:ring-0 focus:border-on-surface outline-none" placeholder="Administrative Task..." type="text"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-16 py-8 bg-[#FAF7F2] dark:bg-[#1A1A18] text-[#3D2B1A] dark:text-[#F0EAE0] rounded-none border-t border-[#E8E0D4] dark:border-[#373831] flat no shadows">
+<a class="font-sans uppercase tracking-[0.2em] text-[10px] text-[#3D2B1A] dark:text-[#F0EAE0] border-b border-[#3D2B1A] pb-1 transition-all duration-500 ease-in-out" href="#">TODAY</a>
+<a class="font-sans uppercase tracking-[0.2em] text-[10px] text-[#715A46] dark:text-[#BABAB0] pb-1 hover:text-[#3D2B1A] dark:hover:text-[#F0EAE0] transition-all duration-500 ease-in-out" href="#">REVIEW</a>
+<a class="font-sans uppercase tracking-[0.2em] text-[10px] text-[#715A46] dark:text-[#BABAB0] pb-1 hover:text-[#3D2B1A] dark:hover:text-[#F0EAE0] transition-all duration-500 ease-in-out" href="#">DASHBOARD</a>
+<a class="font-sans uppercase tracking-[0.2em] text-[10px] text-[#715A46] dark:text-[#BABAB0] pb-1 hover:text-[#3D2B1A] dark:hover:text-[#F0EAE0] transition-all duration-500 ease-in-out" href="#">EDIT</a>
+</nav>
+</body></html>

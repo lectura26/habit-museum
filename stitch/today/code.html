@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html class="light" lang="da"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&amp;family=Playfair+Display:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#d2c4ba",
+                        "primary-fixed": "#fcddc3",
+                        "surface-container-highest": "#e5e2dd",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#3d2b0f",
+                        "surface-variant": "#e5e2dd",
+                        "on-secondary-container": "#755f42",
+                        "on-tertiary-fixed": "#281901",
+                        "surface-container-high": "#ebe8e3",
+                        "on-secondary-fixed": "#281903",
+                        "background": "#fcf9f4",
+                        "on-primary-fixed-variant": "#574330",
+                        "inverse-primary": "#dfc1a9",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f6f3ee",
+                        "secondary-fixed": "#fcdeba",
+                        "secondary-container": "#f9dbb7",
+                        "surface-bright": "#fcf9f4",
+                        "on-background": "#1c1c19",
+                        "surface-container": "#f0ede9",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#574329",
+                        "inverse-on-surface": "#f3f0eb",
+                        "primary": "#261707",
+                        "on-surface-variant": "#4e453e",
+                        "secondary-fixed-dim": "#dfc29f",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#281809",
+                        "tertiary-fixed-dim": "#e0c29a",
+                        "surface": "#fcf9f4",
+                        "on-tertiary-fixed-variant": "#584325",
+                        "inverse-surface": "#31302d",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#fddeb5",
+                        "secondary": "#715b3e",
+                        "on-tertiary-container": "#ac926d",
+                        "primary-container": "#3d2b1a",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#dcdad5",
+                        "on-primary-container": "#ac917b",
+                        "outline": "#80756d",
+                        "on-surface": "#1c1c19",
+                        "tertiary": "#261701",
+                        "primary-fixed-dim": "#dfc1a9",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#715a46"
+                    },
+                    "fontFamily": {
+                        "headline": ["Playfair Display", "serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .playfair { font-family: 'Playfair Display', serif; }
+        .tracking-editorial { letter-spacing: 0.2em; }
+        input[type="range"] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+        input[type="range"]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 1px;
+            background: #E8E0D4;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 12px;
+            width: 12px;
+            background: #261707;
+            margin-top: -6px;
+            border-radius: 0;
+        }
+        .strikethrough { text-decoration: line-through; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background flex justify-center min-h-screen">
+<!-- Mobile Container (390px mandate) -->
+<main class="w-[390px] bg-surface min-h-screen relative flex flex-col pb-24">
+<!-- TopAppBar (Execution of JSON + Task Requirements) -->
+<header class="flex flex-col items-start w-full pt-12 pb-8 px-8 max-w-none">
+<span class="text-[10px] uppercase tracking-editorial font-normal text-[#755f42]">MANDAG, 6. APRIL 2026</span>
+<h1 class="playfair italic text-[22px] text-[#261707] mt-1">God aften, Rasmus.</h1>
+<div class="mt-4 inline-flex items-center space-x-2 bg-surface-container-low px-3 py-1">
+<div class="w-1.5 h-1.5 bg-[#261707]"></div>
+<span class="text-[10px] uppercase tracking-editorial text-[#261707]">Dag 12 i træk</span>
+</div>
+</header>
+<!-- Navigation (JSON style_shell_layout logic) -->
+<nav class="flex justify-between items-center px-8 mb-12 border-b-0">
+<div class="flex space-x-6">
+<a class="text-[10px] uppercase tracking-editorial font-bold text-[#261707] border-b border-[#261707] pb-1" href="#">TODAY</a>
+<a class="text-[10px] uppercase tracking-editorial font-normal text-[#755f42] hover:text-[#715b3e] transition-colors pb-1" href="#">REVIEW</a>
+<a class="text-[10px] uppercase tracking-editorial font-normal text-[#755f42] hover:text-[#715b3e] transition-colors pb-1" href="#">DASHBOARD</a>
+<a class="text-[10px] uppercase tracking-editorial font-normal text-[#755f42] hover:text-[#715b3e] transition-colors pb-1" href="#">EDIT</a>
+</div>
+</nav>
+<!-- Section HABITS -->
+<section class="mx-8 mb-16 border border-[#E8E0D4] p-6">
+<div class="flex justify-between items-baseline mb-8">
+<span class="text-[10px] uppercase tracking-editorial text-on-surface">HABITS</span>
+<span class="text-[10px] uppercase tracking-editorial text-[#C4A882]">3 af 5</span>
+</div>
+<div class="space-y-5 mb-8">
+<!-- Checked 1 -->
+<div class="flex items-center space-x-4">
+<div class="w-5 h-5 bg-[#3D2B1A] flex items-center justify-center">
+<span class="text-[10px] text-surface">✓</span>
+</div>
+<span class="text-sm text-[#C4A882] strikethrough">Morgenmeditation (15 min)</span>
+</div>
+<!-- Checked 2 -->
+<div class="flex items-center space-x-4">
+<div class="w-5 h-5 bg-[#3D2B1A] flex items-center justify-center">
+<span class="text-[10px] text-surface">✓</span>
+</div>
+<span class="text-sm text-[#C4A882] strikethrough">Skrive dagbog</span>
+</div>
+<!-- Unchecked 3 -->
+<div class="flex items-center space-x-4">
+<div class="w-5 h-5 border border-[#C4A882]"></div>
+<span class="text-sm text-primary">Læse 20 sider</span>
+</div>
+<!-- Unchecked 4 -->
+<div class="flex items-center space-x-4">
+<div class="w-5 h-5 border border-[#C4A882]"></div>
+<span class="text-sm text-primary">Ingen koffein efter kl. 14</span>
+</div>
+<!-- Unchecked 5 -->
+<div class="flex items-center space-x-4">
+<div class="w-5 h-5 border border-[#C4A882]"></div>
+<span class="text-sm text-primary">Aftentur uden telefon</span>
+</div>
+</div>
+<div class="w-full h-px bg-[#E8E0D4] mt-10 relative">
+<div class="absolute top-0 left-0 h-px bg-[#3D2B1A] w-[60%]"></div>
+</div>
+</section>
+<!-- Section CHECK-IN -->
+<section class="mx-8 mb-16 border border-[#E8E0D4] p-6">
+<span class="text-[10px] uppercase tracking-editorial text-on-surface mb-8 block">CHECK-IN</span>
+<div class="space-y-8">
+<!-- Sleep -->
+<div class="space-y-2">
+<div class="flex justify-between items-baseline">
+<label class="text-[10px] uppercase tracking-editorial text-[#755f42]">Søvnkvalitet</label>
+<span class="playfair text-[18px]">72</span>
+</div>
+<input max="100" min="0" type="range" value="72"/>
+</div>
+<!-- Mood -->
+<div class="space-y-2">
+<div class="flex justify-between items-baseline">
+<label class="text-[10px] uppercase tracking-editorial text-[#755f42]">Humør</label>
+<span class="playfair text-[18px]">8</span>
+</div>
+<input max="10" min="0" type="range" value="8"/>
+</div>
+<!-- Gratitude -->
+<div class="space-y-2">
+<label class="text-[10px] uppercase tracking-editorial text-[#755f42]">Taknemmelighed</label>
+<textarea class="w-full bg-transparent border-t-0 border-x-0 border-b border-[#E8E0D4] focus:ring-0 focus:border-[#261707] text-sm py-2 px-0 resize-none" placeholder="Hvad er du taknemmelig for i dag?"></textarea>
+</div>
+</div>
+</section>
+<!-- Section TO-DO -->
+<section class="mx-8 mb-16 border border-[#E8E0D4] p-6">
+<span class="text-[10px] uppercase tracking-editorial text-on-surface mb-6 block">TO-DO</span>
+<!-- Retrospective -->
+<div class="mb-10">
+<h3 class="playfair italic text-sm text-[#755f42] mb-4">Hvordan gik det i går?</h3>
+<div class="space-y-6">
+<div class="space-y-3">
+<p class="text-sm">Forberede oplæg til kunden</p>
+<div class="flex space-x-4">
+<button class="text-[9px] tracking-editorial border-b border-[#261707] font-bold">GJORT</button>
+<button class="text-[9px] tracking-editorial text-[#755f42]">DELVIST</button>
+<button class="text-[9px] tracking-editorial text-[#755f42]">IKKE GJORT</button>
+</div>
+</div>
+<div class="space-y-3">
+<p class="text-sm">Rydde op i køkkenet</p>
+<div class="flex space-x-4">
+<button class="text-[9px] tracking-editorial text-[#755f42]">GJORT</button>
+<button class="text-[9px] tracking-editorial border-b border-[#261707] font-bold">DELVIST</button>
+<button class="text-[9px] tracking-editorial text-[#755f42]">IKKE GJORT</button>
+</div>
+</div>
+<div class="space-y-3">
+<p class="text-sm">Svare på alle mails</p>
+<div class="flex space-x-4">
+<button class="text-[9px] tracking-editorial text-[#755f42]">GJORT</button>
+<button class="text-[9px] tracking-editorial text-[#755f42]">DELVIST</button>
+<button class="text-[9px] tracking-editorial border-b border-[#261707] font-bold">IKKE GJORT</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Future Planning -->
+<div class="mb-8">
+<h3 class="playfair italic text-sm text-[#755f42] mb-4">Hvad vil du nå i morgen?</h3>
+<div class="space-y-4">
+<div class="flex items-center space-x-3">
+<span class="playfair italic text-xs">1.</span>
+<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-[#E8E0D4] focus:ring-0 focus:border-[#261707] text-sm py-1 px-0" type="text" value="Planlægge ugens træning"/>
+</div>
+<div class="flex items-center space-x-3">
+<span class="playfair italic text-xs">2.</span>
+<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-[#E8E0D4] focus:ring-0 focus:border-[#261707] text-sm py-1 px-0" placeholder="Tilføj intention..." type="text"/>
+</div>
+<div class="flex items-center space-x-3">
+<span class="playfair italic text-xs">3.</span>
+<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-[#E8E0D4] focus:ring-0 focus:border-[#261707] text-sm py-1 px-0" placeholder="Tilføj intention..." type="text"/>
+</div>
+</div>
+</div>
+<div class="flex space-x-6">
+<button class="text-[9px] tracking-editorial text-[#261707] font-bold hover:opacity-70 transition-opacity">+ TILFØJ</button>
+<button class="text-[9px] tracking-editorial text-[#755f42] hover:opacity-70 transition-opacity">− FJERN</button>
+</div>
+</section>
+<!-- Image Placeholder (Decorative Editorial Element) -->
+<div class="mx-8 mb-16 h-48 bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover grayscale opacity-60" data-alt="Minimalist desktop with a high-end fountain pen and a textured cream-colored notebook in soft cinematic morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcgs5lVFGIesZM54s4amrufijaY7CJnXqI7v_EeGlzx36477YJXW6KCuvKhNwRXmUg9xopOtStAFoQ5PTj1ialLWOKUXvgSyvqzaa7HutrECfC2Igod80_YoW9pBkz6sdqkKgyOSIUNftZCbHCnOjAZTILEsHIE9eDvyTX2UQvvxzHOLnCwEHk1LCkWuXIVwek_FfPOlT9Xu59l20MlA9CTPXguMmrYY-A37dKBdZL4BXOtPnBO-nKygENtay4HqiY5ltUdxwretc"/>
+</div>
+<!-- BottomNavBar (Execution of JSON style_bg_color and style_shell_layout) -->
+<footer class="fixed bottom-0 left-1/2 -translate-x-1/2 w-[390px] z-50 flex justify-around items-center px-4 h-20 bg-[#FAF7F2]/80 backdrop-blur-xl border-t border-[#E5E2DD]">
+<div class="flex flex-col items-center justify-center text-[#261707] font-bold">
+<span class="text-[10px] tracking-editorial uppercase">TODAY</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#755f42]">
+<span class="text-[10px] tracking-editorial uppercase">REVIEW</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#755f42]">
+<span class="text-[10px] tracking-editorial uppercase">DASHBOARD</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#755f42]">
+<span class="text-[10px] tracking-editorial uppercase">EDIT</span>
+</div>
+</footer>
+</main>
+</body></html>

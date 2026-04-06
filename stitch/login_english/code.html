@@ -1,0 +1,141 @@
+<html class="light" lang="en"><head></head><body class="flex items-center justify-center min-h-screen p-4">```html
+
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Habit Museum — Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;family=Playfair+Display:ital,wght@0,400;1,400&amp;family=Noto+Serif:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#d2c4ba",
+                        "primary-fixed": "#fcddc3",
+                        "surface-container-highest": "#e5e2dd",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#3d2b0f",
+                        "surface-variant": "#e5e2dd",
+                        "on-secondary-container": "#755f42",
+                        "on-tertiary-fixed": "#281901",
+                        "surface-container-high": "#ebe8e3",
+                        "on-secondary-fixed": "#281903",
+                        "background": "#fcf9f4",
+                        "on-primary-fixed-variant": "#574330",
+                        "inverse-primary": "#dfc1a9",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f6f3ee",
+                        "secondary-fixed": "#fcdeba",
+                        "secondary-container": "#f9dbb7",
+                        "surface-bright": "#fcf9f4",
+                        "on-background": "#1c1c19",
+                        "surface-container": "#f0ede9",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#574329",
+                        "inverse-on-surface": "#f3f0eb",
+                        "primary": "#261707",
+                        "on-surface-variant": "#4e453e",
+                        "secondary-fixed-dim": "#dfc29f",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#281809",
+                        "tertiary-fixed-dim": "#e0c29a",
+                        "surface": "#fcf9f4",
+                        "on-tertiary-fixed-variant": "#584325",
+                        "inverse-surface": "#31302d",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#fddeb5",
+                        "secondary": "#715b3e",
+                        "on-tertiary-container": "#ac926d",
+                        "primary-container": "#3d2b1a",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#dcdad5",
+                        "on-primary-container": "#ac917b",
+                        "outline": "#80756d",
+                        "on-surface": "#1c1c19",
+                        "tertiary": "#261701",
+                        "primary-fixed-dim": "#dfc1a9",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#715a46"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Playfair Display", "serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #FAF7F2;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<!-- Screen Container (Fixed Width 390px for mobile-first intent) -->
+<main class="w-full max-w-[390px] flex flex-col items-center bg-[#FAF7F2] min-h-[700px] py-24 px-8">
+<!-- Header Section -->
+<header class="w-full text-center mb-24">
+<h1 class="font-headline text-[48px] leading-tight text-primary tracking-tight">
+                HABIT <br/> MUSEUM
+            </h1>
+<p class="font-label text-[10px] tracking-[0.2em] text-on-secondary-container mt-4 uppercase">
+                Curating your daily rituals
+            </p>
+</header>
+<!-- Form Section -->
+<div class="w-full space-y-16">
+<!-- Email Field -->
+<div class="w-full">
+<label class="font-label text-[10px] tracking-[0.2em] text-on-secondary-container uppercase mb-2 block" for="email">
+                    Email
+                </label>
+<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-[#E8E0D4] px-0 py-3 text-[14px] text-primary placeholder:text-outline focus:ring-0 focus:border-primary-container transition-colors duration-300 rounded-none" id="email" placeholder="your@email.com" type="email"/>
+</div>
+<!-- Password Field -->
+<div class="w-full">
+<label class="font-label text-[10px] tracking-[0.2em] text-on-secondary-container uppercase mb-2 block" for="password">
+                    Password
+                </label>
+<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-[#E8E0D4] px-0 py-3 text-[14px] text-primary placeholder:text-outline focus:ring-0 focus:border-primary-container transition-colors duration-300 rounded-none" id="password" placeholder="password" type="password"/>
+</div>
+</div>
+<!-- Action Section -->
+<div class="w-full mt-24 space-y-8">
+<button class="w-full h-14 bg-primary-container text-[#FAF7F2] font-label text-[12px] tracking-[0.3em] font-bold uppercase hover:bg-secondary transition-colors duration-300 rounded-none">
+                ENTER
+            </button>
+<div class="text-center">
+<p class="font-body text-[12px] text-on-secondary-container tracking-wide">
+                    No account? <a class="text-[#1C1410] font-bold hover:underline decoration-1 underline-offset-4 transition-all" href="#">Create here</a>
+</p>
+</div>
+</div>
+<!-- Footnote / Curator Mark -->
+<footer class="mt-auto pt-16">
+<div class="w-8 h-px bg-[#E8E0D4] mx-auto mb-4"></div>
+<p class="font-label text-[9px] tracking-[0.4em] text-outline uppercase text-center">
+                Est. 2024
+            </p>
+</footer>
+</main>
+```</body></html>

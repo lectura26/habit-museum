@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#fe8b70",
+                    "error": "#a54731",
+                    "on-primary-fixed": "#4f3b29",
+                    "inverse-surface": "#0e0e0c",
+                    "surface-variant": "#eae9de",
+                    "primary-fixed": "#fcddc3",
+                    "secondary-fixed-dim": "#dbd3c8",
+                    "surface-container": "#f6f4ec",
+                    "on-primary-fixed-variant": "#6d5743",
+                    "on-background": "#373831",
+                    "surface": "#fffcf7",
+                    "tertiary-fixed-dim": "#eae5db",
+                    "surface-tint": "#715a46",
+                    "primary": "#715a46",
+                    "on-primary-container": "#634e3a",
+                    "outline-variant": "#babab0",
+                    "on-tertiary": "#ffffff",
+                    "on-surface": "#373831",
+                    "secondary": "#69645a",
+                    "inverse-primary": "#ffe0c6",
+                    "surface-container-low": "#fcf9f3",
+                    "on-error-container": "#742410",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed": "#433f36",
+                    "on-secondary-fixed-variant": "#605b52",
+                    "tertiary-dim": "#5b5850",
+                    "primary-dim": "#644e3b",
+                    "on-surface-variant": "#64655d",
+                    "on-primary": "#fff6f1",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed": "#e9e1d5",
+                    "surface-container-highest": "#eae9de",
+                    "tertiary-container": "#f9f3e9",
+                    "on-tertiary-fixed-variant": "#69665e",
+                    "surface-dim": "#e4e3d7",
+                    "on-tertiary-container": "#5f5b54",
+                    "surface-bright": "#fffcf7",
+                    "tertiary": "#67645c",
+                    "tertiary-fixed": "#f9f3e9",
+                    "inverse-on-surface": "#9e9d98",
+                    "on-secondary-container": "#565148",
+                    "primary-fixed-dim": "#edcfb6",
+                    "secondary-dim": "#5d584e",
+                    "secondary-container": "#e9e1d5",
+                    "on-tertiary-fixed": "#4c4942",
+                    "background": "#fffcf7",
+                    "surface-container-high": "#f0eee5",
+                    "surface-container-lowest": "#ffffff",
+                    "error-dim": "#5c1202",
+                    "outline": "#818178",
+                    "primary-container": "#fcddc3"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "serif": ["Cormorant Garamond", "serif"],
+                    "sans": ["Inter", "sans-serif"],
+                    "headline": ["Cormorant Garamond", "serif"],
+                    "body": ["Inter", "sans-serif"],
+                    "label": ["Inter", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        ::placeholder {
+            color: #BABAB0;
+            opacity: 1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col font-sans selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Bar - Derived from TopAppBar JSON but suppressed for Transactional Onboarding Flow as per instructions, however using the styling cues -->
+<header class="w-full px-12 py-10 flex justify-between items-end bg-[#FAF7F2] dark:bg-[#1A1A18]">
+<div class="font-serif uppercase tracking-[0.25em] text-[#3D2B1A] dark:text-[#F0EAE0] text-2xl">
+            JOURNAL
+        </div>
+<div class="flex gap-4">
+<div class="w-2 h-2 bg-outline-variant"></div>
+<div class="w-2 h-2 bg-outline-variant"></div>
+<div class="w-2 h-2 bg-primary"></div>
+</div>
+</header>
+<main class="flex-grow flex flex-col items-center justify-center px-6 py-20 max-w-4xl mx-auto w-full">
+<!-- Onboarding Header Section -->
+<section class="w-full text-center mb-24">
+<span class="font-sans font-medium uppercase tracking-[0.25em] text-xs text-primary block mb-6">
+                YOUR CHECK-IN
+            </span>
+<h1 class="font-serif font-light uppercase tracking-[0.25em] text-3xl md:text-5xl text-on-surface leading-tight max-w-2xl mx-auto">
+                CHOOSE WHAT YOU WISH TO RECORD EVERY EVENING.
+            </h1>
+</section>
+<!-- Configuration Section -->
+<section class="w-full mb-24 grid grid-cols-1 md:grid-cols-12 gap-12 items-end">
+<div class="md:col-span-6">
+<label class="font-sans text-[10px] uppercase tracking-[0.2em] text-outline mb-4 block">NAME YOUR METRIC</label>
+<input class="w-full bg-transparent border-t-0 border-l-0 border-r-0 border-b border-outline-variant focus:border-primary focus:ring-0 px-0 py-4 font-serif uppercase tracking-[0.15em] text-xl placeholder:text-outline-variant/50" placeholder="CHECK-IN NAME..." type="text"/>
+</div>
+<div class="md:col-span-6 flex items-center gap-6">
+<div class="flex-grow">
+<label class="font-sans text-[10px] uppercase tracking-[0.2em] text-outline mb-4 block">RESPONSE TYPE</label>
+<div class="flex flex-wrap gap-x-6 gap-y-4 font-sans text-[11px] uppercase tracking-[0.15em] text-outline-variant">
+<span class="cursor-pointer hover:text-on-surface transition-colors">YES/NO</span>
+<span class="cursor-pointer hover:text-on-surface transition-colors">1–10</span>
+<span class="cursor-pointer text-on-surface border-b border-primary pb-1">1–100</span>
+<span class="cursor-pointer hover:text-on-surface transition-colors">NUMBER</span>
+<span class="cursor-pointer hover:text-on-surface transition-colors">EMOTIONS</span>
+<span class="cursor-pointer hover:text-on-surface transition-colors">FREE TEXT</span>
+</div>
+</div>
+<button class="bg-primary text-on-primary w-14 h-14 flex items-center justify-center shrink-0 hover:bg-on-primary-fixed-variant transition-all">
+<span class="material-symbols-outlined text-2xl">add</span>
+</button>
+</div>
+</section>
+<!-- Current List Section - Tonal Layering -->
+<section class="w-full bg-surface-container-low p-12 mb-24">
+<label class="font-sans text-[10px] uppercase tracking-[0.2em] text-outline mb-10 block">CURRENT SELECTIONS</label>
+<div class="space-y-12">
+<div class="flex justify-between items-baseline group">
+<div class="flex flex-col gap-2">
+<span class="font-serif text-2xl uppercase tracking-[0.1em]">SLEEP QUALITY</span>
+<span class="font-sans text-[10px] uppercase tracking-[0.2em] text-outline">SCALE 1–100</span>
+</div>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity text-outline-variant hover:text-error">
+<span class="material-symbols-outlined text-xl">close</span>
+</button>
+</div>
+<div class="flex justify-between items-baseline group">
+<div class="flex flex-col gap-2">
+<span class="font-serif text-2xl uppercase tracking-[0.1em]">MOOD</span>
+<span class="font-sans text-[10px] uppercase tracking-[0.2em] text-outline">SCALE 1–10</span>
+</div>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity text-outline-variant hover:text-error">
+<span class="material-symbols-outlined text-xl">close</span>
+</button>
+</div>
+<div class="flex justify-between items-baseline group">
+<div class="flex flex-col gap-2">
+<span class="font-serif text-2xl uppercase tracking-[0.1em]">GRATITUDE</span>
+<span class="font-sans text-[10px] uppercase tracking-[0.2em] text-outline">FREE TEXT RESPONSE</span>
+</div>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity text-outline-variant hover:text-error">
+<span class="material-symbols-outlined text-xl">close</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Image Component - Architectural Context -->
+<div class="w-full h-64 overflow-hidden mb-24 grayscale brightness-110 contrast-75">
+<img alt="Journaling" class="w-full h-full object-cover" data-alt="Minimalist still life of an open archival journal on a limestone desk with soft shadows from a window" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6SHOXOIUS5dWPBikNDvdmISskPBzSbqIfvZL62B9e04Q8CWdzRKeXAlTGZK5tpBD55UbUSHjlSyoFvrMROY3KLo8Fz5PloLDo5gw59FutetibTCEP-eYxO51rLHDlbzISgtVA-LOIK0IodM2gUlr2xoDDK9UpU5YVzNk6bwQRhclHMwZRdamBqHF_yijh5TSAMWPpIH8XQIESWeLFsjgP3s14RGCITWPnP7ET13yY60YYyCOLubtmDZ8V0Fbvr--4W4rB5fcFghI"/>
+</div>
+<!-- Action Section -->
+<div class="w-full flex justify-center">
+<button class="bg-primary text-on-primary px-24 py-6 font-sans uppercase tracking-[0.25em] text-sm hover:bg-on-primary-fixed-variant transition-all active:scale-[0.98]">
+                CONTINUE
+            </button>
+</div>
+</main>
+<!-- Footer Space for Balance -->
+<footer class="w-full py-12 px-12 border-t border-outline-variant/20 flex justify-between items-center text-[10px] uppercase tracking-[0.2em] text-outline-variant">
+<span>EST. 2026</span>
+<span>© ARCHIVAL SYSTEM</span>
+<span>PRIVATE &amp; ENCRYPTED</span>
+</footer>
+</body></html>

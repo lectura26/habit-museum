@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html class="light" lang="da"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;family=Playfair+Display:ital,wght@0,400;1,400&amp;family=Noto+Serif:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#d2c4ba",
+                        "primary-fixed": "#fcddc3",
+                        "surface-container-highest": "#e5e2dd",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#3d2b0f",
+                        "surface-variant": "#e5e2dd",
+                        "on-secondary-container": "#755f42",
+                        "on-tertiary-fixed": "#281901",
+                        "surface-container-high": "#ebe8e3",
+                        "on-secondary-fixed": "#281903",
+                        "background": "#fcf9f4",
+                        "on-primary-fixed-variant": "#574330",
+                        "inverse-primary": "#dfc1a9",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f6f3ee",
+                        "secondary-fixed": "#fcdeba",
+                        "secondary-container": "#f9dbb7",
+                        "surface-bright": "#fcf9f4",
+                        "on-background": "#1c1c19",
+                        "surface-container": "#f0ede9",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#574329",
+                        "inverse-on-surface": "#f3f0eb",
+                        "primary": "#261707",
+                        "on-surface-variant": "#4e453e",
+                        "secondary-fixed-dim": "#dfc29f",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#281809",
+                        "tertiary-fixed-dim": "#e0c29a",
+                        "surface": "#fcf9f4",
+                        "on-tertiary-fixed-variant": "#584325",
+                        "inverse-surface": "#31302d",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#fddeb5",
+                        "secondary": "#715b3e",
+                        "on-tertiary-container": "#ac926d",
+                        "primary-container": "#3d2b1a",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#dcdad5",
+                        "on-primary-container": "#ac917b",
+                        "outline": "#80756d",
+                        "on-surface": "#1c1c19",
+                        "tertiary": "#261701",
+                        "primary-fixed-dim": "#dfc1a9",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#715a46"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Playfair Display"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #fcf9f4; }
+        .serif { font-family: 'Playfair Display', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex justify-center items-center min-h-screen">
+<!-- Mobile Container (390px wide) -->
+<main class="w-[390px] h-[844px] bg-surface relative flex flex-col overflow-hidden">
+<!-- Onboarding Progress Dots -->
+<header class="w-full pt-16 flex justify-center space-x-3">
+<div class="w-1.5 h-1.5 border border-primary-container"></div>
+<div class="w-1.5 h-1.5 bg-primary-container"></div>
+<div class="w-1.5 h-1.5 border border-primary-container"></div>
+<div class="w-1.5 h-1.5 border border-primary-container"></div>
+</header>
+<!-- Main Content Area -->
+<section class="px-8 mt-24 flex-grow">
+<!-- Section Label -->
+<label class="block font-label text-[10px] uppercase tracking-[0.2em] text-on-secondary-container mb-12">
+                DINE VANER
+            </label>
+<!-- Headline -->
+<h1 class="serif text-[32px] leading-tight text-primary mb-16">
+                Hvad ønsker du at <br/> <span class="italic">kultivere</span> i dag?
+            </h1>
+<!-- Input Group -->
+<div class="flex items-end mb-16 border-b border-outline-variant pb-2 group focus-within:border-primary transition-colors">
+<input class="flex-grow bg-transparent border-none p-0 focus:ring-0 text-primary placeholder:text-outline text-sm font-body" placeholder="Tilføj en vane..." type="text"/>
+<button class="ml-4 text-primary text-lg leading-none font-light hover:text-secondary transition-colors">
+                    +
+                </button>
+</div>
+<!-- Habit List -->
+<div class="space-y-8">
+<!-- Row 1 -->
+<div class="flex justify-between items-center group">
+<span class="text-sm font-body text-primary">Gå 10.000 skridt</span>
+<button class="text-outline group-hover:text-primary transition-colors text-xs">×</button>
+</div>
+<div class="w-full h-px bg-outline-variant/20"></div>
+<!-- Row 2 -->
+<div class="flex justify-between items-center group">
+<span class="text-sm font-body text-primary">Læse 20 minutter</span>
+<button class="text-outline group-hover:text-primary transition-colors text-xs">×</button>
+</div>
+<div class="w-full h-px bg-outline-variant/20"></div>
+<!-- Row 3 -->
+<div class="flex justify-between items-center group">
+<span class="text-sm font-body text-primary">Drikke 2 liter vand</span>
+<button class="text-outline group-hover:text-primary transition-colors text-xs">×</button>
+</div>
+<div class="w-full h-px bg-outline-variant/20"></div>
+</div>
+</section>
+<!-- Footer Action -->
+<footer class="p-8">
+<button class="w-full bg-primary-container text-surface py-5 font-label text-[10px] uppercase tracking-[0.2em] hover:bg-secondary transition-colors duration-300">
+                FORTSÆT
+            </button>
+</footer>
+<!-- Decorative Curator Identity (Bottom Right) -->
+<div class="absolute bottom-24 right-8 opacity-10 rotate-90 origin-bottom-right">
+<span class="font-label text-[8px] uppercase tracking-[0.5em] whitespace-nowrap">CURATED EXHIBITION № 02</span>
+</div>
+</main>
+</body></html>

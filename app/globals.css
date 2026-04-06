@@ -1,0 +1,322 @@
+@import "tailwindcss";
+
+/* ─── Design tokens ─────────────────────────────────────────── */
+:root {
+  --bg-primary:    #FAF7F2;
+  --bg-secondary:  #F0EAE0;
+  --border:        #E8E0D4;
+  --accent-light:  #C4A882;
+  --accent-mid:    #8B7355;
+  --accent-dark:   #3D2B1A;
+  --text-primary:  #1C1410;
+  --text-muted:    #8B7355;
+  --font-display:  var(--font-cormorant);
+  --font-ui:       var(--font-inter);
+}
+
+/* ─── Tailwind theme overrides (v4 @theme syntax) ───────────── */
+@theme inline {
+  --color-bg-primary:   #FAF7F2;
+  --color-bg-secondary: #F0EAE0;
+  --color-border:       #E8E0D4;
+  --color-accent-light: #C4A882;
+  --color-accent-mid:   #8B7355;
+  --color-accent-dark:  #3D2B1A;
+  --color-text-primary: #1C1410;
+  --color-text-muted:   #8B7355;
+
+  --font-cormorant: var(--font-cormorant);
+  --font-inter:     var(--font-inter);
+}
+
+/* ─── Base reset ─────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-style: normal !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100dvh;
+  background-color: var(--bg-primary);
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  color: var(--text-primary);
+}
+
+/* ─── Typography helpers ─────────────────────────────────────── */
+.font-display {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+}
+.font-ui {
+  font-family: var(--font-inter), 'Inter', sans-serif;
+}
+
+/* Section labels — Inter, 10px, uppercase, 0.2em */
+.label {
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+/* ─── Custom form elements ───────────────────────────────────── */
+
+/* Bottom-border-only input */
+.input-line {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  padding: 10px 0;
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  font-size: 14px;
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color 150ms ease;
+}
+.input-line::placeholder {
+  color: var(--accent-light);
+}
+.input-line:focus {
+  border-bottom-color: var(--accent-dark);
+}
+
+/* Textarea — bottom border only */
+.textarea-line {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  padding: 10px 0;
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  font-size: 14px;
+  color: var(--text-primary);
+  outline: none;
+  resize: none;
+  min-height: 36px;
+  transition: border-color 150ms ease;
+  field-sizing: content;
+}
+.textarea-line::placeholder {
+  color: var(--accent-light);
+}
+.textarea-line:focus {
+  border-bottom-color: var(--accent-dark);
+}
+
+/* Primary button */
+.btn-primary {
+  display: block;
+  width: 100%;
+  background: var(--accent-dark);
+  color: var(--bg-primary);
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  border-radius: 0;
+  border: none;
+  padding: 16px 32px;
+  cursor: pointer;
+  text-align: center;
+  transition: opacity 150ms ease, transform 100ms ease;
+}
+.btn-primary:hover  { opacity: 0.75; }
+.btn-primary:active { transform: scale(0.98); }
+
+/* Secondary button */
+.btn-secondary {
+  display: block;
+  width: 100%;
+  background: transparent;
+  color: var(--accent-dark);
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  border-radius: 0;
+  border: 1px solid var(--accent-light);
+  padding: 16px 32px;
+  cursor: pointer;
+  text-align: center;
+  transition: opacity 150ms ease, transform 100ms ease;
+}
+.btn-secondary:hover  { opacity: 0.75; }
+.btn-secondary:active { transform: scale(0.98); }
+
+/* ─── Checkbox ───────────────────────────────────────────────── */
+.checkbox-habit {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  border-radius: 4px;
+  border: 1.5px solid var(--accent-light);
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 200ms ease, transform 200ms ease;
+  flex-shrink: 0;
+}
+.checkbox-habit.checked {
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+  transform: scale(1);
+}
+.checkbox-habit:active { transform: scale(0.85); }
+.checkbox-habit .checkmark {
+  width: 10px;
+  height: 7px;
+  border-left: 1.5px solid var(--bg-primary);
+  border-bottom: 1.5px solid var(--bg-primary);
+  transform: rotate(-45deg) translateY(-1px);
+  opacity: 0;
+  transition: opacity 150ms ease;
+}
+.checkbox-habit.checked .checkmark { opacity: 1; }
+
+/* ─── Slider ─────────────────────────────────────────────────── */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 2px;
+  background: var(--border);
+  border-radius: 0;
+  outline: none;
+  cursor: pointer;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent-dark);
+  border: 3px solid var(--bg-primary);
+  box-shadow: 0 0 0 1.5px var(--accent-dark);
+  cursor: pointer;
+  transition: transform 150ms ease;
+}
+input[type="range"]:active::-webkit-slider-thumb { transform: scale(1.15); }
+input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent-dark);
+  border: 3px solid var(--bg-primary);
+  box-shadow: 0 0 0 1.5px var(--accent-dark);
+  cursor: pointer;
+}
+
+/* ─── Animations ─────────────────────────────────────────────── */
+
+/* Page fade in */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Section fade up */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Strikethrough reveal */
+@keyframes strikeReveal {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+/* Progress bar fill */
+@keyframes progressFill {
+  from { width: 0; }
+  to   { width: var(--progress-pct); }
+}
+
+/* Streak pulse */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+.animate-fade-in  { animation: fadeIn 300ms ease both; }
+.animate-fade-up  { animation: fadeUp 400ms ease both; }
+
+/* Staggered sections */
+.stagger-1 { animation-delay: 0ms; }
+.stagger-2 { animation-delay: 100ms; }
+.stagger-3 { animation-delay: 200ms; }
+.stagger-4 { animation-delay: 300ms; }
+.stagger-5 { animation-delay: 400ms; }
+.stagger-6 { animation-delay: 500ms; }
+
+/* Habit name when checked */
+.habit-checked-name {
+  color: var(--accent-light);
+  position: relative;
+  transition: color 300ms ease;
+}
+.habit-checked-name::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 1px;
+  background: var(--accent-light);
+  animation: strikeReveal 300ms ease both;
+  width: 100%;
+}
+
+/* Progress track */
+.progress-track {
+  height: 2px;
+  background: var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--accent-dark);
+  transition: width 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Pulse dot (review reminder) */
+.pulse-dot {
+  animation: pulse 2s infinite;
+}
+
+/* ─── Scrollbar hide ─────────────────────────────────────────── */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ─── Hairline dividers ──────────────────────────────────────── */
+.hairline { border-color: var(--border); }
+.hairline-top    { border-top:    1px solid var(--border); }
+.hairline-bottom { border-bottom: 1px solid var(--border); }
+
+/* ─── Section card ───────────────────────────────────────────── */
+.section-block {
+  padding: 28px 0;
+  border-top: 1px solid var(--border);
+}
+.section-block:first-child { border-top: none; }
+
+/* ─── Nav bottom safe area ───────────────────────────────────── */
+.page-content {
+  padding-bottom: 80px;
+}

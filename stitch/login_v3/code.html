@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HABIT MUSEUM — LOGIN</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&amp;family=Inter:wght@100..900&amp;family=Newsreader:opsz,wght@6..72,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#fe8b70",
+                        "error": "#a54731",
+                        "on-primary-fixed": "#4f3b29",
+                        "inverse-surface": "#0e0e0c",
+                        "surface-variant": "#eae9de",
+                        "primary-fixed": "#fcddc3",
+                        "secondary-fixed-dim": "#dbd3c8",
+                        "surface-container": "#f6f4ec",
+                        "on-primary-fixed-variant": "#6d5743",
+                        "on-background": "#373831",
+                        "surface": "#fffcf7",
+                        "tertiary-fixed-dim": "#eae5db",
+                        "surface-tint": "#715a46",
+                        "primary": "#715a46",
+                        "on-primary-container": "#634e3a",
+                        "outline-variant": "#babab0",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#373831",
+                        "secondary": "#69645a",
+                        "inverse-primary": "#ffe0c6",
+                        "surface-container-low": "#fcf9f3",
+                        "on-error-container": "#742410",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#433f36",
+                        "on-secondary-fixed-variant": "#605b52",
+                        "tertiary-dim": "#5b5850",
+                        "primary-dim": "#644e3b",
+                        "on-surface-variant": "#64655d",
+                        "on-primary": "#fff6f1",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#e9e1d5",
+                        "surface-container-highest": "#eae9de",
+                        "tertiary-container": "#f9f3e9",
+                        "on-tertiary-fixed-variant": "#69665e",
+                        "surface-dim": "#e4e3d7",
+                        "on-tertiary-container": "#5f5b54",
+                        "surface-bright": "#fffcf7",
+                        "tertiary": "#67645c",
+                        "tertiary-fixed": "#f9f3e9",
+                        "inverse-on-surface": "#9e9d98",
+                        "on-secondary-container": "#565148",
+                        "primary-fixed-dim": "#edcfb6",
+                        "secondary-dim": "#5d584e",
+                        "secondary-container": "#e9e1d5",
+                        "on-tertiary-fixed": "#4c4942",
+                        "background": "#fffcf7",
+                        "surface-container-high": "#f0eee5",
+                        "surface-container-lowest": "#ffffff",
+                        "error-dim": "#5c1202",
+                        "outline": "#818178",
+                        "primary-container": "#fcddc3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Cormorant Garamond", "serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #fffcf7;
+            color: #373831;
+            margin: 0;
+            padding: 0;
+            min-height: max(884px, 100dvh);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        }
+        input:focus {
+            outline: none !important;
+            box-shadow: none !important;
+            border-color: #715a46 !important;
+        }
+        ::placeholder {
+            color: #babab0 !important;
+            opacity: 1;
+        }
+        /* Ensure no italics globally */
+        * {
+            font-style: normal !important;
+        }
+    </style>
+</head>
+<body class="antialiased font-body min-h-screen flex flex-col items-center justify-center p-6 md:p-24 overflow-hidden">
+<main class="w-full max-w-lg flex flex-col items-center text-center">
+<div class="mb-32">
+<h1 class="font-headline font-normal uppercase leading-tight tracking-[0.25em] text-[48px] text-on-surface">
+                HABIT MUSEUM
+            </h1>
+<p class="mt-4 font-body uppercase text-[10px] tracking-[0.4em] text-outline">
+                THE CURATED PERSISTENCE
+            </p>
+</div>
+<section class="w-full space-y-20">
+<div class="w-full space-y-12">
+<div class="relative w-full">
+<label class="block text-[10px] font-medium tracking-[0.2em] text-outline text-left uppercase mb-2" for="email">
+                        IDENTITY
+                    </label>
+<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant py-4 px-0 font-body text-sm uppercase tracking-[0.15em] focus:ring-0 placeholder:text-outline-variant transition-colors duration-300" id="email" placeholder="your@email.com" type="email"/>
+</div>
+<div class="relative w-full">
+<label class="block text-[10px] font-medium tracking-[0.2em] text-outline text-left uppercase mb-2" for="password">
+                        PASSCODE
+                    </label>
+<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant py-4 px-0 font-body text-sm uppercase tracking-[0.15em] focus:ring-0 placeholder:text-outline-variant transition-colors duration-300" id="password" placeholder="password" type="password"/>
+</div>
+</div>
+<div class="w-full pt-12">
+<button class="w-full bg-primary text-on-primary py-8 text-sm font-medium tracking-[0.3em] uppercase transition-all duration-500 hover:opacity-90 active:scale-[0.99] border-none rounded-none">
+                    ENTER
+                </button>
+<div class="mt-16 flex flex-col items-center gap-4">
+<a class="font-body text-[11px] tracking-[0.15em] text-outline uppercase hover:text-primary transition-colors border-b border-transparent hover:border-primary pb-0.5" href="#">
+                        No account? Create here
+                    </a>
+</div>
+</div>
+</section>
+</main>
+<div class="fixed top-12 left-12 hidden lg:block">
+<span class="text-[10px] tracking-[0.5em] text-outline-variant uppercase vertical-text" style="writing-mode: vertical-rl;">
+            EST. MMXXIV
+        </span>
+</div>
+<div class="fixed bottom-12 right-12 hidden lg:block">
+<span class="text-[10px] tracking-[0.5em] text-outline-variant uppercase">
+            PRIVACY / TERMS
+        </span>
+</div>
+<div class="fixed inset-0 pointer-events-none border-[12px] border-surface-container-low z-[-1]"></div>
+<div class="absolute inset-0 z-[-10] overflow-hidden">
+<div class="absolute top-[-10%] right-[-5%] w-[60%] h-[80%] opacity-10 filter grayscale blur-3xl mix-blend-multiply">
+<div class="w-full h-full bg-cover bg-center" data-alt="Abstract soft lighting on a white textured wall with subtle architectural shadows and organic curves" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAmtFaah3SW6L54x68m6B1BWpjmmY88Yqjt-J-SAV071z-AfRtPIRL_G9guPW1p0V5V0F1tGrV4t8n1T4T6woO3eqcGbg7Bjv-v-qTQQQMDEMTzpyh9nDu-A8NstcHoCbM0ozPdWu40r_uG_i_SPZQZsQ2-0vGZjd9702pFUPCrLMlcW0Wl-p6Eucxs_W0z7wesLHat9OLh7-mbscj3Zj-HOQ8n7DuCEueZiYoGxKmKTKkjYgVFVP4gciaTrIVh_i3MMSL7nIFeIKc');"></div>
+</div>
+</div>
+</body></html>

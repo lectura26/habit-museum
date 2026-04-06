@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#fe8b70",
+                    "error": "#a54731",
+                    "on-primary-fixed": "#4f3b29",
+                    "inverse-surface": "#0e0e0c",
+                    "surface-variant": "#eae9de",
+                    "primary-fixed": "#fcddc3",
+                    "secondary-fixed-dim": "#dbd3c8",
+                    "surface-container": "#f6f4ec",
+                    "on-primary-fixed-variant": "#6d5743",
+                    "on-background": "#373831",
+                    "surface": "#fffcf7",
+                    "tertiary-fixed-dim": "#eae5db",
+                    "surface-tint": "#715a46",
+                    "primary": "#715a46",
+                    "on-primary-container": "#634e3a",
+                    "outline-variant": "#babab0",
+                    "on-tertiary": "#ffffff",
+                    "on-surface": "#373831",
+                    "secondary": "#69645a",
+                    "inverse-primary": "#ffe0c6",
+                    "surface-container-low": "#fcf9f3",
+                    "on-error-container": "#742410",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed": "#433f36",
+                    "on-secondary-fixed-variant": "#605b52",
+                    "tertiary-dim": "#5b5850",
+                    "primary-dim": "#644e3b",
+                    "on-surface-variant": "#64655d",
+                    "on-primary": "#fff6f1",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed": "#e9e1d5",
+                    "surface-container-highest": "#eae9de",
+                    "tertiary-container": "#f9f3e9",
+                    "on-tertiary-fixed-variant": "#69665e",
+                    "surface-dim": "#e4e3d7",
+                    "on-tertiary-container": "#5f5b54",
+                    "surface-bright": "#fffcf7",
+                    "tertiary": "#67645c",
+                    "tertiary-fixed": "#f9f3e9",
+                    "inverse-on-surface": "#9e9d98",
+                    "on-secondary-container": "#565148",
+                    "primary-fixed-dim": "#edcfb6",
+                    "secondary-dim": "#5d584e",
+                    "secondary-container": "#e9e1d5",
+                    "on-tertiary-fixed": "#4c4942",
+                    "background": "#fffcf7",
+                    "surface-container-high": "#f0eee5",
+                    "surface-container-lowest": "#ffffff",
+                    "error-dim": "#5c1202",
+                    "outline": "#818178",
+                    "primary-container": "#fcddc3"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Newsreader", "serif"],
+                    "body": ["Inter", "sans-serif"],
+                    "label": ["Inter", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            font-size: 20px;
+        }
+        body {
+            background-color: #fffcf7;
+            font-family: 'Inter', sans-serif;
+            color: #373831;
+        }
+        .serif-display {
+            font-family: 'Newsreader', serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased min-h-screen flex flex-col items-center">
+<!-- Content Area: SUPPRESS TopAppBar and BottomNavBar as per transactional/onboarding rules -->
+<main class="flex-1 w-full max-w-2xl px-6 md:px-12 flex flex-col justify-center py-20">
+<!-- Step Indicators -->
+<div class="flex gap-4 mb-16">
+<div class="h-0.5 w-12 bg-outline-variant"></div>
+<div class="h-0.5 w-12 bg-primary"></div>
+<div class="h-0.5 w-12 bg-outline-variant opacity-30"></div>
+</div>
+<!-- Header -->
+<header class="mb-16">
+<p class="font-label text-xs tracking-[0.2em] text-primary mb-4">ONBOARDING STEP 02</p>
+<h1 class="serif-display text-5xl md:text-7xl font-light uppercase tracking-tight leading-none text-on-surface">
+                Design Your <br/>Daily Rituals
+            </h1>
+</header>
+<!-- Habits Section -->
+<section class="space-y-12">
+<div>
+<label class="font-label text-[10px] tracking-[0.2em] text-on-surface-variant block mb-6 uppercase">YOUR HABITS</label>
+<!-- Input Field -->
+<div class="flex items-center border-b border-outline-variant pb-2 focus-within:border-primary transition-colors duration-300">
+<input class="flex-1 bg-transparent border-none focus:ring-0 text-lg font-light placeholder:text-outline-variant text-on-surface py-2 px-0" placeholder="Add a habit..." type="text"/>
+<button class="w-10 h-10 flex items-center justify-center bg-on-surface text-surface transition-opacity hover:opacity-90 active:opacity-70">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+</div>
+<!-- List of Habits -->
+<ul class="space-y-0">
+<li class="group flex justify-between items-center py-6 border-b border-outline-variant/30">
+<span class="text-lg font-light text-on-surface">Walk 10,000 steps</span>
+<button class="opacity-30 group-hover:opacity-100 transition-opacity p-2">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</li>
+<li class="group flex justify-between items-center py-6 border-b border-outline-variant/30">
+<span class="text-lg font-light text-on-surface">Read for 20 minutes</span>
+<button class="opacity-30 group-hover:opacity-100 transition-opacity p-2">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</li>
+<li class="group flex justify-between items-center py-6 border-b border-outline-variant/30">
+<span class="text-lg font-light text-on-surface">Drink 2 liters of water</span>
+<button class="opacity-30 group-hover:opacity-100 transition-opacity p-2">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</li>
+</ul>
+</section>
+<!-- CTA -->
+<footer class="mt-20">
+<button class="w-full md:w-auto px-16 py-5 bg-primary text-on-primary font-label text-sm tracking-[0.25em] uppercase hover:bg-on-primary-fixed transition-colors active:opacity-80">
+                CONTINUE
+            </button>
+<p class="mt-8 font-label text-[10px] tracking-[0.15em] text-outline text-center md:text-left">
+                PREVIOUS STEP: <span class="underline underline-offset-4 cursor-pointer hover:text-on-surface transition-colors">IDENTITY</span>
+</p>
+</footer>
+</main>
+<!-- Side Decoration (Editorial Flair) -->
+<div class="fixed right-0 top-0 bottom-0 w-1/4 hidden lg:block overflow-hidden pointer-events-none opacity-20">
+<div class="h-full w-full relative">
+<div class="absolute inset-0 bg-surface-container"></div>
+<img alt="" class="h-full w-full object-cover grayscale mix-blend-multiply" data-alt="Minimalist architectural space with sharp shadows and warm beige concrete walls and high end editorial aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWTV1B-_cHgQo_gIXlvHV2Y7sCmeSzBQXYB81u_AUPW0WAxltdrlWCCsYq8s8Oz4CfVEs4xVBgtlkZnx4SE8kYZoRfBbV0Knt-N0j0h7sH9rrrqc8hDyKQ-llG915smErE2bk42RgPIhxMHlhc0SwkozJIM7ZyoSpcS9GsIAt1EQdWW7kzkTTMI8B0zO3uOPBAwucZqkdte9108_0dWmg_5Cg4dLCyp3lZ7OS2cB8LHfM-GgLNaOVnkYNlcrlWSRNchuAdOqZJVag"/>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&amp;family=Inter:wght@300;400;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#fe8b70",
+                    "error": "#a54731",
+                    "on-primary-fixed": "#4f3b29",
+                    "inverse-surface": "#0e0e0c",
+                    "surface-variant": "#eae9de",
+                    "primary-fixed": "#fcddc3",
+                    "secondary-fixed-dim": "#dbd3c8",
+                    "surface-container": "#f6f4ec",
+                    "on-primary-fixed-variant": "#6d5743",
+                    "on-background": "#373831",
+                    "surface": "#fffcf7",
+                    "tertiary-fixed-dim": "#eae5db",
+                    "surface-tint": "#715a46",
+                    "primary": "#715a46",
+                    "on-primary-container": "#634e3a",
+                    "outline-variant": "#babab0",
+                    "on-tertiary": "#ffffff",
+                    "on-surface": "#373831",
+                    "secondary": "#69645a",
+                    "inverse-primary": "#ffe0c6",
+                    "surface-container-low": "#fcf9f3",
+                    "on-error-container": "#742410",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed": "#433f36",
+                    "on-secondary-fixed-variant": "#605b52",
+                    "tertiary-dim": "#5b5850",
+                    "primary-dim": "#644e3b",
+                    "on-surface-variant": "#64655d",
+                    "on-primary": "#fff6f1",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed": "#e9e1d5",
+                    "surface-container-highest": "#eae9de",
+                    "tertiary-container": "#f9f3e9",
+                    "on-tertiary-fixed-variant": "#69665e",
+                    "surface-dim": "#e4e3d7",
+                    "on-tertiary-container": "#5f5b54",
+                    "surface-bright": "#fffcf7",
+                    "tertiary": "#67645c",
+                    "tertiary-fixed": "#f9f3e9",
+                    "inverse-on-surface": "#9e9d98",
+                    "on-secondary-container": "#565148",
+                    "primary-fixed-dim": "#edcfb6",
+                    "secondary-dim": "#5d584e",
+                    "secondary-container": "#e9e1d5",
+                    "on-tertiary-fixed": "#4c4942",
+                    "background": "#fffcf7",
+                    "surface-container-high": "#f0eee5",
+                    "surface-container-lowest": "#ffffff",
+                    "error-dim": "#5c1202",
+                    "outline": "#818178",
+                    "primary-container": "#fcddc3"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "0px"
+            },
+            "fontFamily": {
+                    "headline": ["Cormorant Garamond", "serif"],
+                    "body": ["Inter", "sans-serif"],
+                    "label": ["Inter", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .serif-display { font-family: 'Cormorant Garamond', serif; font-style: normal; }
+        .tracking-prestigious { letter-spacing: 0.25em; }
+        .tracking-technical { letter-spacing: 0.15em; }
+        /* Reset any inherited italics */
+        * { font-style: normal !important; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body min-h-screen flex flex-col">
+<!-- Onboarding is linear/transactional -->
+<main class="flex-grow flex flex-col items-center justify-between px-8 py-20 md:px-24 md:py-32">
+<!-- Progress Indicators (Architectural Square Dots) -->
+<div class="flex space-x-6">
+<div class="w-1.5 h-1.5 bg-[#3D2B1A]"></div>
+<div class="w-1.5 h-1.5 bg-outline-variant"></div>
+<div class="w-1.5 h-1.5 bg-outline-variant"></div>
+<div class="w-1.5 h-1.5 bg-outline-variant"></div>
+</div>
+<!-- Central Curatorial Content -->
+<div class="flex flex-col items-center text-center max-w-4xl">
+<h1 class="serif-display text-primary text-xs tracking-prestigious uppercase mb-12">
+            HABIT MUSEUM
+        </h1>
+<!-- Hero Image Integration -->
+<div class="w-full aspect-[4/5] md:aspect-[21/9] mb-16 overflow-hidden">
+<img alt="Minimalist architectural space with strong shadows and natural limestone textures" class="w-full h-full object-cover grayscale-[0.2]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlUNR_iIcbq6PxuUvMvGcqpYQPRm6Du_jRAyU7Ns8qpQAqTpa491hP1wL2t8P3ITcfMY8oMKfKxjqLU4nz9ZJqo12RthpFdb5tLnVmGCDViPqAgG4hVdNzEJfchxnBzdZJLmVgZ770E9ZF7fdzlVNJ-nkOxpEN_LYfKMr3mvSVXZ0GHrYalwnYw0YBkYysw8qQzw8sjP4FyoptXep8rqJEc5FMjKo3FFW9St7aW3x_D29enEHdGt9yFJBtVxOU4wAQXIHywht0Ops"/>
+</div>
+<h2 class="serif-display text-4xl md:text-7xl text-on-surface tracking-prestigious uppercase leading-tight font-normal">
+            LET US BUILD YOUR MUSEUM.
+        </h2>
+<div class="mt-12 w-24 h-px bg-outline-variant"></div>
+</div>
+<!-- Action Section -->
+<div class="w-full flex justify-center mt-12">
+<button class="bg-[#3D2B1A] text-on-primary font-label text-[10px] tracking-technical px-20 py-6 transition-all duration-300 hover:bg-on-primary-fixed active:scale-[0.98] uppercase">
+            BEGIN
+        </button>
+</div>
+</main>
+<!-- Footer Credit -->
+<footer class="px-12 py-10 flex justify-between items-end border-t border-transparent">
+<div class="text-[9px] font-label text-outline tracking-technical uppercase">
+        PHASE 01 / INITIALIZING
+    </div>
+<div class="text-[9px] font-label text-outline tracking-technical uppercase">
+        © 2026 CURATED LIVING
+    </div>
+</footer>
+</body></html>

@@ -1,0 +1,163 @@
+<html lang="en"><head></head><body class="flex justify-center items-center min-h-screen">```html
+
+
+
+    <meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;family=Playfair+Display:ital,wght@0,400;1,400&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#d2c4ba",
+                        "primary-fixed": "#fcddc3",
+                        "surface-container-highest": "#e5e2dd",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#3d2b0f",
+                        "surface-variant": "#e5e2dd",
+                        "on-secondary-container": "#755f42",
+                        "on-tertiary-fixed": "#281901",
+                        "surface-container-high": "#ebe8e3",
+                        "on-secondary-fixed": "#281903",
+                        "background": "#fcf9f4",
+                        "on-primary-fixed-variant": "#574330",
+                        "inverse-primary": "#dfc1a9",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f6f3ee",
+                        "secondary-fixed": "#fcdeba",
+                        "secondary-container": "#f9dbb7",
+                        "surface-bright": "#fcf9f4",
+                        "on-background": "#1c1c19",
+                        "surface-container": "#f0ede9",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#574329",
+                        "inverse-on-surface": "#f3f0eb",
+                        "primary": "#261707",
+                        "on-surface-variant": "#4e453e",
+                        "secondary-fixed-dim": "#dfc29f",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#281809",
+                        "tertiary-fixed-dim": "#e0c29a",
+                        "surface": "#fcf9f4",
+                        "on-tertiary-fixed-variant": "#584325",
+                        "inverse-surface": "#31302d",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#fddeb5",
+                        "secondary": "#715b3e",
+                        "on-tertiary-container": "#ac926d",
+                        "primary-container": "#3d2b1a",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#dcdad5",
+                        "on-primary-container": "#ac917b",
+                        "outline": "#80756d",
+                        "on-surface": "#1c1c19",
+                        "tertiary": "#261701",
+                        "primary-fixed-dim": "#dfc1a9",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#715a46"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Playfair Display", "serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcf9f4;
+            color: #1c1c19;
+            -webkit-font-smoothing: antialiased;
+        }
+        .playfair-italic {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+        }
+        .step-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #e5e2dd;
+            border-radius: 0px;
+        }
+        .step-dot.active {
+            background-color: #3d2b1a;
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<!-- Screen Wrapper: 390px wide -->
+<main class="w-[390px] h-[844px] bg-surface relative flex flex-col overflow-hidden">
+<!-- Top Navigation Area (Implicit Hierarchy) -->
+<header class="pt-16 px-8 flex flex-col items-center">
+<!-- Onboarding Step Indicator -->
+<div class="flex gap-3 mb-16">
+<div class="step-dot"></div>
+<div class="step-dot"></div>
+<div class="step-dot"></div>
+<div class="step-dot active"></div>
+</div>
+<!-- Section Label -->
+<h2 class="font-label text-[10px] uppercase tracking-[0.2em] text-[#8B7355] mb-8">
+            YOUR TO-DO
+        </h2>
+</header>
+<!-- Content Canvas -->
+<section class="px-8 flex-grow flex flex-col items-center text-center">
+<!-- Explanation Text -->
+<p class="playfair-italic text-[22px] leading-relaxed text-primary mb-24">
+            Every evening you write intentions for the following day. Choose how many you want as standard.
+        </p>
+<!-- Counter Component -->
+<div class="flex items-center justify-between w-full max-w-[240px]">
+<button class="text-primary-container text-4xl font-light focus:outline-none hover:text-secondary transition-colors">
+                −
+            </button>
+<div class="flex flex-col items-center">
+<span class="font-headline text-[64px] text-primary-container leading-none">
+                    3
+                </span>
+</div>
+<button class="text-primary-container text-4xl font-light focus:outline-none hover:text-secondary transition-colors">
+                +
+            </button>
+</div>
+<!-- Muted Utility Text -->
+<p class="font-body text-[11px] text-outline mt-8 uppercase tracking-[0.1em]">
+            YOU CAN ALWAYS ADJUST THIS ON THE DAY.
+        </p>
+</section>
+<!-- Footer Action -->
+<footer class="p-8 mt-auto">
+<!-- Full Width Square Primary Button -->
+<button class="w-full h-14 bg-primary-container text-surface font-label text-[10px] uppercase tracking-[0.2em] transition-colors hover:bg-secondary active:opacity-80">
+            FINISH SETUP
+        </button>
+</footer>
+<!-- Bottom Border Accent (Hairline) -->
+<div class="absolute bottom-0 w-full h-[1px] bg-outline-variant opacity-20"></div>
+</main>
+<!-- Decorative Gallery Elements -->
+<div class="fixed top-0 left-0 w-full h-full pointer-events-none opacity-[0.03]" data-alt="subtle fine linen paper texture for a tactile gallery feel" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBB73tGv7V0y8Jq96A0RqSRn55A34U-F8pPcmBdkQqb5D3neuJz7bhJW9cVPd_XTvAyEtxi6_a5SQWG7irkbj-CtBI3iM0WBqAH-7gydSvncn6_tkFT4-JBzCpy6l6V_6nzGN2ghOjfr663URb79cKCI5QpdcoKl51AlyU4jnXkjIPb_L31cg7sbBXjYBcz2Xab5UMdQaKGsZZr4Nr87D_uq-nTTq2gceM5ePDV9vAwbH4eX3mmK5e0DdpW1GjnYVvrvYMP3TOOmeI');">
+</div>
+
+```</body></html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;family=Playfair+Display:ital,wght@0,400;1,400&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline-variant": "#d2c4ba",
+                    "primary-fixed": "#fcddc3",
+                    "surface-container-highest": "#e5e2dd",
+                    "error": "#ba1a1a",
+                    "tertiary-container": "#3d2b0f",
+                    "surface-variant": "#e5e2dd",
+                    "on-secondary-container": "#755f42",
+                    "on-tertiary-fixed": "#281901",
+                    "surface-container-high": "#ebe8e3",
+                    "on-secondary-fixed": "#281903",
+                    "background": "#fcf9f4",
+                    "on-primary-fixed-variant": "#574330",
+                    "inverse-primary": "#dfc1a9",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-low": "#f6f3ee",
+                    "secondary-fixed": "#fcdeba",
+                    "secondary-container": "#f9dbb7",
+                    "surface-bright": "#fcf9f4",
+                    "on-background": "#1c1c19",
+                    "surface-container": "#f0ede9",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed-variant": "#574329",
+                    "inverse-on-surface": "#f3f0eb",
+                    "primary": "#261707",
+                    "on-surface-variant": "#4e453e",
+                    "secondary-fixed-dim": "#dfc29f",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed": "#281809",
+                    "tertiary-fixed-dim": "#e0c29a",
+                    "surface": "#fcf9f4",
+                    "on-tertiary-fixed-variant": "#584325",
+                    "inverse-surface": "#31302d",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#fddeb5",
+                    "secondary": "#715b3e",
+                    "on-tertiary-container": "#ac926d",
+                    "primary-container": "#3d2b1a",
+                    "on-error": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "surface-dim": "#dcdad5",
+                    "on-primary-container": "#ac917b",
+                    "outline": "#80756d",
+                    "on-surface": "#1c1c19",
+                    "tertiary": "#261701",
+                    "primary-fixed-dim": "#dfc1a9",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#715a46"
+            },
+            "borderRadius": {
+                    "none": "0px",
+                    "DEFAULT": "0px"
+            },
+            "fontFamily": {
+                    "headline": ["Playfair Display"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #FAF7F2;
+            color: #261707;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .editorial-spacing {
+            margin-bottom: 64px;
+        }
+        .step-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #E5E2DD;
+        }
+        .step-dot-active {
+            background-color: #3D2B1A;
+        }
+        .material-symbols-outlined {
+            display: none !important; /* Strictly following No Icons rule */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="flex justify-center items-start min-h-screen">
+<!-- Screen Container (390px) -->
+<main class="w-[390px] min-h-screen bg-[#FAF7F2] flex flex-col pt-16 px-8 pb-12 relative">
+<!-- Step Progress -->
+<nav class="flex gap-2 mb-12">
+<div class="step-dot"></div>
+<div class="step-dot"></div>
+<div class="step-dot step-dot-active"></div>
+<div class="step-dot"></div>
+</nav>
+<!-- Section Label -->
+<div class="mb-4">
+<span class="text-[10px] uppercase tracking-[0.2em] font-normal text-[#755f42]">YOUR CHECK-IN</span>
+</div>
+<!-- Headline Explanation -->
+<header class="editorial-spacing">
+<h1 class="font-headline italic text-[22px] leading-tight text-[#261707]">Choose what you wish to record every evening.</h1>
+</header>
+<!-- Input Section -->
+<section class="flex flex-col mb-8">
+<div class="flex items-end justify-between border-b border-[#E5E2DD] pb-2">
+<input class="bg-transparent border-none p-0 focus:ring-0 text-sm text-[#261707] placeholder-[#80756d] w-full font-body" placeholder="Check-in name..." type="text"/>
+<span class="text-[10px] uppercase tracking-[0.2em] text-[#755f42] whitespace-nowrap ml-4">1–100</span>
+</div>
+<!-- Type Selectors (Toggles) -->
+<div class="flex flex-wrap gap-x-4 gap-y-3 mt-6">
+<button class="text-[10px] uppercase tracking-[0.2em] text-[#755f42]">YES/NO</button>
+<button class="text-[10px] uppercase tracking-[0.2em] text-[#755f42]">1–10</button>
+<button class="text-[10px] uppercase tracking-[0.2em] text-[#1c1410] border-b border-[#1c1410] font-bold">1–100</button>
+<button class="text-[10px] uppercase tracking-[0.2em] text-[#755f42]">NUMBER</button>
+<button class="text-[10px] uppercase tracking-[0.2em] text-[#755f42]">EMOTIONS</button>
+<button class="text-[10px] uppercase tracking-[0.2em] text-[#755f42]">FREE TEXT</button>
+</div>
+<!-- Add Button -->
+<div class="mt-8 flex justify-end">
+<button class="w-10 h-10 flex items-center justify-center border border-[#80756d] text-[#261707] text-lg hover:bg-[#F6F3EE] transition-colors">
+                    +
+                </button>
+</div>
+</section>
+<!-- List of Metrics -->
+<section class="flex flex-col gap-6 mb-20">
+<!-- Metric 1 -->
+<div class="flex justify-between items-center group">
+<div class="flex flex-col">
+<span class="text-sm font-body text-[#261707]">Sleep Quality</span>
+<span class="text-[10px] uppercase tracking-[0.1em] text-[#755f42]">1–100</span>
+</div>
+<button class="text-[10px] uppercase tracking-[0.2em] text-[#755f42] hover:text-[#261707]">×</button>
+</div>
+<hr class="border-t border-[#E5E2DD] opacity-50"/>
+<!-- Metric 2 -->
+<div class="flex justify-between items-center group">
+<div class="flex flex-col">
+<span class="text-sm font-body text-[#261707]">Mood</span>
+<span class="text-[10px] uppercase tracking-[0.1em] text-[#755f42]">1–10</span>
+</div>
+<button class="text-[10px] uppercase tracking-[0.2em] text-[#755f42] hover:text-[#261707]">×</button>
+</div>
+<hr class="border-t border-[#E5E2DD] opacity-50"/>
+<!-- Metric 3 -->
+<div class="flex justify-between items-center group">
+<div class="flex flex-col">
+<span class="text-sm font-body text-[#261707]">Gratitude</span>
+<span class="text-[10px] uppercase tracking-[0.1em] text-[#755f42]">FREE TEXT</span>
+</div>
+<button class="text-[10px] uppercase tracking-[0.2em] text-[#755f42] hover:text-[#261707]">×</button>
+</div>
+</section>
+<!-- Bottom Action Button -->
+<footer class="mt-auto">
+<button class="w-full bg-[#3D2B1A] py-5 text-[#FAF7F2] text-[10px] uppercase tracking-[0.3em] font-bold hover:bg-[#261707] transition-colors">
+                CONTINUE
+            </button>
+</footer>
+<!-- Optional Decorative Image for Editorial Feel -->
+<div class="absolute -z-10 top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none">
+<img alt="" class="w-full h-full object-cover" data-alt="fine-grained paper texture with subtle organic variations in ivory and sand tones for an editorial museum aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGlhYtFzdho7wksBv2civzBU790L1xBaSesnvlGNnhlGthKzlavm5XiIASCiAmd7DXwXJGBkmw8jFl8C94ulX5B3yhdUKk0efhUHeg9gKIZoO4XT3q1U7Lwa-oriLiD7i1RqYIRupbeeJjcIVxJfcRTCWv6J7_nmn4-PeOl65krS5txE0Z_EoyofeyT59ithO45ULw6w13DZSmaqnssJPWp3zUO5szVNK4nGqbDXRTpIM9gTzDR2vEMSySg3dKUyLCoJlHkT0oqJc"/>
+</div>
+</main>
+</body></html>

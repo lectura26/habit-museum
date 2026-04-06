@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&amp;family=Inter:wght@300;400;600;700&amp;family=Newsreader:opsz,wght@6..72,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#fe8b70",
+                    "error": "#a54731",
+                    "on-primary-fixed": "#4f3b29",
+                    "inverse-surface": "#0e0e0c",
+                    "surface-variant": "#eae9de",
+                    "primary-fixed": "#fcddc3",
+                    "secondary-fixed-dim": "#dbd3c8",
+                    "surface-container": "#f6f4ec",
+                    "on-primary-fixed-variant": "#6d5743",
+                    "on-background": "#373831",
+                    "surface": "#fffcf7",
+                    "tertiary-fixed-dim": "#eae5db",
+                    "surface-tint": "#715a46",
+                    "primary": "#715a46",
+                    "on-primary-container": "#634e3a",
+                    "outline-variant": "#babab0",
+                    "on-tertiary": "#ffffff",
+                    "on-surface": "#373831",
+                    "secondary": "#69645a",
+                    "inverse-primary": "#ffe0c6",
+                    "surface-container-low": "#fcf9f3",
+                    "on-error-container": "#742410",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed": "#433f36",
+                    "on-secondary-fixed-variant": "#605b52",
+                    "tertiary-dim": "#5b5850",
+                    "primary-dim": "#644e3b",
+                    "on-surface-variant": "#64655d",
+                    "on-primary": "#fff6f1",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed": "#e9e1d5",
+                    "surface-container-highest": "#eae9de",
+                    "tertiary-container": "#f9f3e9",
+                    "on-tertiary-fixed-variant": "#69665e",
+                    "surface-dim": "#e4e3d7",
+                    "on-tertiary-container": "#5f5b54",
+                    "surface-bright": "#fffcf7",
+                    "tertiary": "#67645c",
+                    "tertiary-fixed": "#f9f3e9",
+                    "inverse-on-surface": "#9e9d98",
+                    "on-secondary-container": "#565148",
+                    "primary-fixed-dim": "#edcfb6",
+                    "secondary-dim": "#5d584e",
+                    "secondary-container": "#e9e1d5",
+                    "on-tertiary-fixed": "#4c4942",
+                    "background": "#fffcf7",
+                    "surface-container-high": "#f0eee5",
+                    "surface-container-lowest": "#ffffff",
+                    "error-dim": "#5c1202",
+                    "outline": "#818178",
+                    "primary-container": "#fcddc3"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Cormorant Garamond", "serif"],
+                    "serif": ["Cormorant Garamond", "serif"],
+                    "body": ["Inter", "sans-serif"],
+                    "label": ["Inter", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        }
+        ::selection {
+            background-color: #fcddc3;
+            color: #3d2b1a;
+        }
+        body {
+            -webkit-font-smoothing: antialiased;
+        }
+        /* Overriding any potential inherited italics from fonts or browser defaults */
+        * {
+            font-style: normal !important;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container">
+<!-- TopAppBar -->
+<header class="bg-[#FAF7F2] dark:bg-[#1A1A18] text-[#3D2B1A] dark:text-[#F0EAE0] flex justify-between items-end w-full px-6 md:px-12 py-8 md:py-10 sticky top-0 z-40 border-none">
+<h1 class="font-serif uppercase tracking-[0.25em] text-lg md:text-2xl">MANDAG, 6. APRIL 2026</h1>
+<div class="hidden md:flex gap-8 items-center">
+<span class="font-serif uppercase tracking-[0.25em] text-sm text-[#715A46] dark:text-[#BABAB0] hover:underline decoration-1 underline-offset-8 transition-opacity duration-300 active:opacity-70 cursor-pointer">TODAY</span>
+<span class="font-serif uppercase tracking-[0.25em] text-sm text-[#3D2B1A] dark:text-[#F0EAE0] font-bold hover:underline decoration-1 underline-offset-8 transition-opacity duration-300 active:opacity-70 cursor-pointer">REVIEW</span>
+<span class="font-serif uppercase tracking-[0.25em] text-sm text-[#715A46] dark:text-[#BABAB0] hover:underline decoration-1 underline-offset-8 transition-opacity duration-300 active:opacity-70 cursor-pointer">DASHBOARD</span>
+</div>
+<div class="font-serif uppercase tracking-[0.25em] text-xs md:text-sm text-right">
+            GOD AFTEN, RASMUS.
+        </div>
+</header>
+<main class="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-24 space-y-24 pb-32">
+<!-- Weekly Summary Section -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+<div class="md:col-span-8 space-y-8">
+<label class="text-[10px] md:text-xs font-label uppercase tracking-[0.25em] text-primary">WEEKLY REVIEW</label>
+<h2 class="text-4xl md:text-7xl font-serif uppercase tracking-[0.05em] leading-[1.1] text-on-surface">
+                    YOU COMPLETED 73% OF YOUR HABITS THIS WEEK.
+                </h2>
+<!-- Day Grid -->
+<div class="flex items-center gap-4 pt-4">
+<div class="flex flex-col items-center gap-2">
+<div class="w-8 h-8 md:w-12 md:h-12 bg-primary border border-outline-variant"></div>
+<span class="text-[10px] font-label tracking-[0.15em] text-outline">M</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-8 h-8 md:w-12 md:h-12 bg-primary border border-outline-variant"></div>
+<span class="text-[10px] font-label tracking-[0.15em] text-outline">T</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-8 h-8 md:w-12 md:h-12 bg-surface-container border border-outline-variant"></div>
+<span class="text-[10px] font-label tracking-[0.15em] text-outline">W</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-8 h-8 md:w-12 md:h-12 bg-primary border border-outline-variant"></div>
+<span class="text-[10px] font-label tracking-[0.15em] text-outline">T</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-8 h-8 md:w-12 md:h-12 bg-primary border border-outline-variant"></div>
+<span class="text-[10px] font-label tracking-[0.15em] text-outline">F</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-8 h-8 md:w-12 md:h-12 bg-surface-container border border-outline-variant"></div>
+<span class="text-[10px] font-label tracking-[0.15em] text-outline">S</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-8 h-8 md:w-12 md:h-12 bg-surface-container border border-outline-variant"></div>
+<span class="text-[10px] font-label tracking-[0.15em] text-outline">S</span>
+</div>
+</div>
+</div>
+<!-- Side Image Accent -->
+<div class="md:col-span-4 hidden md:block">
+<div class="aspect-[3/4] bg-surface-container-high overflow-hidden">
+<img alt="Architectural detail" class="w-full h-full object-cover grayscale opacity-80 mix-blend-multiply" data-alt="Monochrome architectural detail of a concrete structure with sharp shadows and minimalist aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5htdOtNlqyMGCNtKk0v3o-NUfNRpO1LQ3SK4dsQXD9Nzm0MqJt3_1-xKysNa-dLYiiws0FZ9IAcNE0-3XUmKw-XBLBxWs7pdfnXUWSQLIa55jDGrbt_1Mn8TvXGiC7QzUhmnHF9WePFkBWOwG-V6YYb-3ZB-Xkb0tpOJOi_8Z_kYkN_hFqyCKJf7dJOLOFEi2gcisiOlxI_S3IM6fTAiL5Hr63gQpsO7a-wzojdHWZrlqsODwyy76usCkAmuwVPtCk7wjPK3PVIs"/>
+</div>
+</div>
+</section>
+<!-- Reflection Form -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
+<div class="space-y-4">
+<label class="text-[10px] font-label uppercase tracking-[0.2em] text-outline">WHAT WENT WELL</label>
+<textarea class="w-full bg-surface border border-outline-variant p-6 text-on-surface font-serif text-xl focus:ring-0 focus:border-primary placeholder:text-outline-variant transition-all duration-300 resize-none uppercase tracking-wide" placeholder="RECORD YOUR SUCCESSES..." rows="6"></textarea>
+</div>
+<div class="space-y-4">
+<label class="text-[10px] font-label uppercase tracking-[0.2em] text-outline">FOCUS FOR NEXT WEEK</label>
+<textarea class="w-full bg-surface border border-outline-variant p-6 text-on-surface font-serif text-xl focus:ring-0 focus:border-primary placeholder:text-outline-variant transition-all duration-300 resize-none uppercase tracking-wide" placeholder="IDENTIFY YOUR PRIORITIES..." rows="6"></textarea>
+</div>
+<div class="md:col-span-2 pt-8">
+<button class="bg-primary text-on-primary px-16 py-6 font-label uppercase tracking-[0.2em] text-sm hover:opacity-90 active:scale-[0.98] transition-all duration-300">
+                    SAVE REVIEW
+                </button>
+</div>
+</section>
+<!-- Monthly Rate Section -->
+<section class="pt-24 border-t border-outline-variant space-y-12">
+<div class="flex flex-col md:flex-row justify-between items-baseline gap-8">
+<div>
+<label class="text-[10px] font-label uppercase tracking-[0.2em] text-primary block mb-4">MONTHLY RATE</label>
+<div class="text-8xl md:text-[10rem] font-serif tracking-tight leading-none text-on-surface">73%</div>
+</div>
+<div class="w-full md:w-1/2 h-64 relative">
+<!-- Simple Line Chart Visualization -->
+<svg class="w-full h-full overflow-visible" viewbox="0 0 400 100">
+<path d="M 0 80 Q 50 75 100 60 T 200 40 T 300 30 T 400 10" fill="none" stroke="#715a46" stroke-width="1.5"></path>
+<circle cx="0" cy="80" fill="#715a46" r="2"></circle>
+<circle cx="100" cy="60" fill="#715a46" r="2"></circle>
+<circle cx="200" cy="40" fill="#715a46" r="2"></circle>
+<circle cx="300" cy="30" fill="#715a46" r="2"></circle>
+<circle cx="400" cy="10" fill="#715a46" r="4"></circle>
+</svg>
+<div class="flex justify-between mt-4 text-[10px] font-label uppercase tracking-[0.15em] text-outline">
+<span>WEEK 1</span>
+<span>WEEK 2</span>
+<span>WEEK 3</span>
+<span>WEEK 4</span>
+</div>
+</div>
+</div>
+<!-- Stats Grid -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 pt-8">
+<div class="space-y-2 border-l border-outline-variant pl-6">
+<span class="text-[10px] font-label uppercase tracking-[0.15em] text-outline block">COMPLETED</span>
+<span class="text-3xl font-serif">51</span>
+</div>
+<div class="space-y-2 border-l border-outline-variant pl-6">
+<span class="text-[10px] font-label uppercase tracking-[0.15em] text-outline block">LONGEST STREAK</span>
+<span class="text-3xl font-serif uppercase">12D</span>
+</div>
+<div class="space-y-2 border-l border-outline-variant pl-6">
+<span class="text-[10px] font-label uppercase tracking-[0.15em] text-outline block">TOTAL HOURS</span>
+<span class="text-3xl font-serif">24.5</span>
+</div>
+<div class="space-y-2 border-l border-outline-variant pl-6">
+<span class="text-[10px] font-label uppercase tracking-[0.15em] text-outline block">TREND</span>
+<span class="text-3xl font-serif uppercase">+14%</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 py-6 bg-[#FAF7F2] dark:bg-[#1A1A18] border-t border-[#E8E0D4] dark:border-[#373831] no-shadows">
+<a class="text-[#715A46] dark:text-[#BABAB0] font-sans uppercase tracking-[0.2em] text-[10px] pb-1 transition-all duration-500 ease-in-out" href="#">TODAY</a>
+<a class="text-[#3D2B1A] dark:text-[#F0EAE0] font-sans uppercase tracking-[0.2em] text-[10px] border-b border-[#3D2B1A] pb-1 transition-all duration-500 ease-in-out" href="#">REVIEW</a>
+<a class="text-[#715A46] dark:text-[#BABAB0] font-sans uppercase tracking-[0.2em] text-[10px] pb-1 transition-all duration-500 ease-in-out" href="#">DASHBOARD</a>
+<a class="text-[#715A46] dark:text-[#BABAB0] font-sans uppercase tracking-[0.2em] text-[10px] pb-1 transition-all duration-500 ease-in-out" href="#">EDIT</a>
+</nav>
+</body></html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HABIT MUSEUM — A Private Practice</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Newsreader:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#fe8b70",
+                        "error": "#a54731",
+                        "on-primary-fixed": "#4f3b29",
+                        "inverse-surface": "#0e0e0c",
+                        "surface-variant": "#eae9de",
+                        "primary-fixed": "#fcddc3",
+                        "secondary-fixed-dim": "#dbd3c8",
+                        "surface-container": "#f6f4ec",
+                        "on-primary-fixed-variant": "#6d5743",
+                        "on-background": "#373831",
+                        "surface": "#fffcf7",
+                        "tertiary-fixed-dim": "#eae5db",
+                        "surface-tint": "#715a46",
+                        "primary": "#715a46",
+                        "on-primary-container": "#634e3a",
+                        "outline-variant": "#babab0",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#373831",
+                        "secondary": "#69645a",
+                        "inverse-primary": "#ffe0c6",
+                        "surface-container-low": "#fcf9f3",
+                        "on-error-container": "#742410",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#433f36",
+                        "on-secondary-fixed-variant": "#605b52",
+                        "tertiary-dim": "#5b5850",
+                        "primary-dim": "#644e3b",
+                        "on-surface-variant": "#64655d",
+                        "on-primary": "#fff6f1",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#e9e1d5",
+                        "surface-container-highest": "#eae9de",
+                        "tertiary-container": "#f9f3e9",
+                        "on-tertiary-fixed-variant": "#69665e",
+                        "surface-dim": "#e4e3d7",
+                        "on-tertiary-container": "#5f5b54",
+                        "surface-bright": "#fffcf7",
+                        "tertiary": "#67645c",
+                        "tertiary-fixed": "#f9f3e9",
+                        "inverse-on-surface": "#9e9d98",
+                        "on-secondary-container": "#565148",
+                        "primary-fixed-dim": "#edcfb6",
+                        "secondary-dim": "#5d584e",
+                        "secondary-container": "#e9e1d5",
+                        "on-tertiary-fixed": "#4c4942",
+                        "background": "#fffcf7",
+                        "surface-container-high": "#f0eee5",
+                        "surface-container-lowest": "#ffffff",
+                        "error-dim": "#5c1202",
+                        "outline": "#818178",
+                        "primary-container": "#fcddc3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Cormorant Garamond", "serif"],
+                        "serif": ["Cormorant Garamond", "serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #fffcf7;
+            font-family: 'Inter', sans-serif;
+            color: #373831;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Ensure no italics are used */
+        * {
+            font-style: normal !important;
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Anchor -->
+<header class="bg-[#FAF7F2] dark:bg-[#1A1A18] text-[#3D2B1A] dark:text-[#F0EAE0] flex justify-between items-end w-full px-8 md:px-12 py-10 max-w-none fixed top-0 z-50 transition-all duration-300">
+<div class="font-serif uppercase tracking-[0.25em] text-sm md:text-2xl">MANDAG, 6. APRIL 2026</div>
+<div class="flex gap-8 items-center">
+<span class="font-serif uppercase tracking-[0.25em] text-xs md:text-sm text-[#715A46] dark:text-[#BABAB0] hover:underline decoration-1 underline-offset-8 transition-opacity duration-300 active:opacity-70 cursor-pointer">Archive</span>
+<span class="font-serif uppercase tracking-[0.25em] text-xs md:text-sm text-[#3D2B1A] dark:text-[#F0EAE0] font-bold hover:underline decoration-1 underline-offset-8 transition-opacity duration-300 active:opacity-70 cursor-pointer">GOD AFTEN, RASMUS.</span>
+</div>
+</header>
+<main class="pt-40 md:pt-64">
+<!-- Hero Section -->
+<section class="flex flex-col items-center text-center px-6 mb-32">
+<h1 class="font-serif uppercase tracking-[0.25em] text-5xl md:text-[80px] leading-tight text-[#3D2B1A] mb-4">
+                HABIT MUSEUM
+            </h1>
+<p class="font-body text-[10px] uppercase tracking-[0.25em] text-[#8B7355] mb-8">
+                A PRIVATE MUSEUM FOR PERSONAL DISCIPLINE
+            </p>
+<div class="w-[120px] h-[1px] bg-[#E8E0D4] mb-12"></div>
+<div class="flex flex-col md:flex-row gap-6">
+<button class="bg-[#3D2B1A] text-[#fffcf7] px-12 py-4 font-body text-xs uppercase tracking-[0.2em] transition-all hover:opacity-90 active:scale-95">
+                    ENTRÉ
+                </button>
+<button class="border border-[#3D2B1A] text-[#3D2B1A] px-12 py-4 font-body text-xs uppercase tracking-[0.2em] transition-all hover:bg-[#3D2B1A] hover:text-[#fffcf7] active:scale-95">
+                    CREATE ACCOUNT
+                </button>
+</div>
+</section>
+<!-- Gallery Feature Image -->
+<section class="px-6 md:px-12 mb-32">
+<div class="aspect-[21/9] w-full overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 group">
+<img class="w-full h-full object-cover transform scale-105 group-hover:scale-100 transition-transform duration-[2000ms]" data-alt="Interior of a minimalist architectural gallery with soft afternoon light hitting a textured concrete wall and a single wooden chair" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa8DJJ_U1GZfjWHN-M9IHn9qpRK4YfA-F5q28uU4Ujbqj4iSjdXzZ19O9sWJP6KcvzNU5dPKe0rxP2XectjoBkrOFOR8tMq3DKuaboMFpcO78ooRoUMXGwLpJii1_NFQCjUvD38izDenE4FpNznRqRtEAMHWdouAVWRYlBjrEOKo0UWYAFrezZLWczGeQJKvLsnebd4dUv2BecZlNctzhwIIB3iX0ZhbBNvAf0wpKs4B5mU0Qayqvp3D-UHxBmB4X40fkl4JdRS_E"/>
+</div>
+</section>
+<!-- Feature Grid (Six Sections Stacked) -->
+<div class="px-6 md:px-12 max-w-7xl mx-auto space-y-0">
+<!-- 01 -->
+<section class="grid grid-cols-1 md:grid-cols-12 border-t border-[#E8E0D4] py-20 gap-8 group">
+<div class="md:col-span-1 font-serif text-3xl text-[#BABAB0] group-hover:text-[#3D2B1A] transition-colors">01</div>
+<div class="md:col-span-5">
+<h2 class="font-serif uppercase tracking-[0.25em] text-2xl mb-6">The Daily Practice</h2>
+</div>
+<div class="md:col-span-6">
+<p class="font-body text-[15px] leading-relaxed text-[#3D2B1A] max-w-md">
+                        A curated ritual of recurring actions. We view your daily habits not as chores, but as artifacts of a life well-lived. Each repetition is a stroke on the canvas of your character.
+                    </p>
+</div>
+</section>
+<!-- 02 -->
+<section class="grid grid-cols-1 md:grid-cols-12 border-t border-[#E8E0D4] py-20 gap-8 group">
+<div class="md:col-span-1 font-serif text-3xl text-[#BABAB0] group-hover:text-[#3D2B1A] transition-colors">02</div>
+<div class="md:col-span-5">
+<h2 class="font-serif uppercase tracking-[0.25em] text-2xl mb-6">Check-In</h2>
+</div>
+<div class="md:col-span-6">
+<p class="font-body text-[15px] leading-relaxed text-[#3D2B1A] max-w-md">
+                        The silent acknowledgement of effort. A minimalist interface designed to remove friction, allowing you to record your progress with a single, intentional touch.
+                    </p>
+</div>
+</section>
+<!-- 03 -->
+<section class="grid grid-cols-1 md:grid-cols-12 border-t border-[#E8E0D4] py-20 gap-8 group">
+<div class="md:col-span-1 font-serif text-3xl text-[#BABAB0] group-hover:text-[#3D2B1A] transition-colors">03</div>
+<div class="md:col-span-5">
+<h2 class="font-serif uppercase tracking-[0.25em] text-2xl mb-6">To-Do</h2>
+</div>
+<div class="md:col-span-6">
+<p class="font-body text-[15px] leading-relaxed text-[#3D2B1A] max-w-md">
+                        An architectural approach to productivity. Prioritize the essential, discard the noise. Our lists are designed for focus, not overwhelm.
+                    </p>
+</div>
+</section>
+<!-- 04 -->
+<section class="grid grid-cols-1 md:grid-cols-12 border-t border-[#E8E0D4] py-20 gap-8 group">
+<div class="md:col-span-1 font-serif text-3xl text-[#BABAB0] group-hover:text-[#3D2B1A] transition-colors">04</div>
+<div class="md:col-span-5">
+<h2 class="font-serif uppercase tracking-[0.25em] text-2xl mb-6">Review</h2>
+</div>
+<div class="md:col-span-6">
+<p class="font-body text-[15px] leading-relaxed text-[#3D2B1A] max-w-md">
+                        Look back with clarity. Periodic retrospectives that allow you to see the patterns of your discipline over weeks, months, and years.
+                    </p>
+</div>
+</section>
+<!-- 05 -->
+<section class="grid grid-cols-1 md:grid-cols-12 border-t border-[#E8E0D4] py-20 gap-8 group">
+<div class="md:col-span-1 font-serif text-3xl text-[#BABAB0] group-hover:text-[#3D2B1A] transition-colors">05</div>
+<div class="md:col-span-5">
+<h2 class="font-serif uppercase tracking-[0.25em] text-2xl mb-6">Dashboard</h2>
+</div>
+<div class="md:col-span-6">
+<p class="font-body text-[15px] leading-relaxed text-[#3D2B1A] max-w-md">
+                        Your life as a data-driven exhibition. Elegant visualizations that reveal the architecture of your habits without the clutter of traditional analytics.
+                    </p>
+</div>
+</section>
+<!-- 06 -->
+<section class="grid grid-cols-1 md:grid-cols-12 border-t border-[#E8E0D4] py-20 gap-8 group">
+<div class="md:col-span-1 font-serif text-3xl text-[#BABAB0] group-hover:text-[#3D2B1A] transition-colors">06</div>
+<div class="md:col-span-5">
+<h2 class="font-serif uppercase tracking-[0.25em] text-2xl mb-6">Only You</h2>
+</div>
+<div class="md:col-span-6">
+<p class="font-body text-[15px] leading-relaxed text-[#3D2B1A] max-w-md">
+                        Privacy is the ultimate luxury. Your museum is offline-first, encrypted, and entirely yours. No social feeds, no distractions. Just you and your work.
+                    </p>
+</div>
+</section>
+</div>
+<!-- Quote Section -->
+<section class="py-48 px-6 text-center">
+<blockquote class="font-serif uppercase tracking-[0.25em] text-2xl md:text-4xl text-[#3D2B1A] max-w-4xl mx-auto leading-relaxed">
+                "We are what we repeatedly do. Excellence, then, is not an act, but a habit."
+                <footer class="mt-8 text-sm uppercase tracking-[0.25em] opacity-60">— ARISTOTLE</footer>
+</blockquote>
+</section>
+<!-- Final Call to Action -->
+<section class="mb-64 px-6 md:px-12">
+<div class="bg-surface-container-high py-32 px-12 text-center border border-[#E8E0D4]">
+<h3 class="font-serif uppercase tracking-[0.25em] text-3xl mb-12">Begin Your Collection</h3>
+<div class="flex justify-center">
+<button class="bg-[#3D2B1A] text-[#fffcf7] px-16 py-6 font-body text-sm uppercase tracking-[0.25em] hover:bg-[#715A46] transition-colors">
+                        Enter the Museum
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="pb-32 px-12 text-center">
+<div class="mb-8 opacity-40">
+<img class="w-12 h-12 mx-auto grayscale mix-blend-multiply" data-alt="Abstract minimalist line drawing of an archway on textured cream paper" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxCusrJhyMSOIbfUYXreQdnvBDAW5ZFTqKmw_xNPSZWjywLlKLwyBtPox31BJhWR1rK46UY3cPzNc2ZgB1nQOlCP5qwPWKmt3zPNb4-8LQYFJIB79Q1UudDnW1QreAqLt6X4QVvzEcpmjKXZ3Hpo3LeC-nPYxdg4D9-FoLWfk_0wpeSRUE_NCcUe8x1oSYLRG9u7llDeaknt7GQMXY0Xm_pWg0HQbkG_j-VFocH73mnwKJDDd1WxPyrRiyBExn5xHE6BPJBP_G0E4"/>
+</div>
+<p class="font-body text-[10px] uppercase tracking-[0.3em] text-[#3D2B1A]">
+            HABIT MUSEUM · A PRIVATE PRACTICE
+        </p>
+<p class="mt-4 font-body text-[8px] uppercase tracking-[0.1em] opacity-30">
+            EST. 2026 · ALL RIGHTS RESERVED
+        </p>
+</footer>
+<!-- Bottom Navigation Shell (Anchor) -->
+<nav class="bg-[#FAF7F2] dark:bg-[#1A1A18] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-16 py-8 border-t border-[#E8E0D4] dark:border-[#373831]">
+<a class="font-sans uppercase tracking-[0.25em] text-[10px] text-[#3D2B1A] dark:text-[#F0EAE0] border-b border-[#3D2B1A] pb-1 transition-all duration-500 ease-in-out hover:text-[#3D2B1A] dark:hover:text-[#F0EAE0]" href="#">TODAY</a>
+<a class="font-sans uppercase tracking-[0.25em] text-[10px] text-[#715A46] dark:text-[#BABAB0] pb-1 transition-all duration-500 ease-in-out hover:text-[#3D2B1A] dark:hover:text-[#F0EAE0]" href="#">REVIEW</a>
+<a class="font-sans uppercase tracking-[0.25em] text-[10px] text-[#715A46] dark:text-[#BABAB0] pb-1 transition-all duration-500 ease-in-out hover:text-[#3D2B1A] dark:hover:text-[#F0EAE0]" href="#">DASHBOARD</a>
+<a class="font-sans uppercase tracking-[0.25em] text-[10px] text-[#715A46] dark:text-[#BABAB0] pb-1 transition-all duration-500 ease-in-out hover:text-[#3D2B1A] dark:hover:text-[#F0EAE0]" href="#">EDIT</a>
+</nav>
+</body></html>

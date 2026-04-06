@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;family=Playfair+Display:ital,wght@0,400;1,400&amp;family=Noto+Serif:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline-variant": "#d2c4ba",
+                    "primary-fixed": "#fcddc3",
+                    "surface-container-highest": "#e5e2dd",
+                    "error": "#ba1a1a",
+                    "tertiary-container": "#3d2b0f",
+                    "surface-variant": "#e5e2dd",
+                    "on-secondary-container": "#755f42",
+                    "on-tertiary-fixed": "#281901",
+                    "surface-container-high": "#ebe8e3",
+                    "on-secondary-fixed": "#281903",
+                    "background": "#fcf9f4",
+                    "on-primary-fixed-variant": "#574330",
+                    "inverse-primary": "#dfc1a9",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-low": "#f6f3ee",
+                    "secondary-fixed": "#fcdeba",
+                    "secondary-container": "#f9dbb7",
+                    "surface-bright": "#fcf9f4",
+                    "on-background": "#1c1c19",
+                    "surface-container": "#f0ede9",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed-variant": "#574329",
+                    "inverse-on-surface": "#f3f0eb",
+                    "primary": "#261707",
+                    "on-surface-variant": "#4e453e",
+                    "secondary-fixed-dim": "#dfc29f",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed": "#281809",
+                    "tertiary-fixed-dim": "#e0c29a",
+                    "surface": "#fcf9f4",
+                    "on-tertiary-fixed-variant": "#584325",
+                    "inverse-surface": "#31302d",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#fddeb5",
+                    "secondary": "#715b3e",
+                    "on-tertiary-container": "#ac926d",
+                    "primary-container": "#3d2b1a",
+                    "on-error": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "surface-dim": "#dcdad5",
+                    "on-primary-container": "#ac917b",
+                    "outline": "#80756d",
+                    "on-surface": "#1c1c19",
+                    "tertiary": "#261701",
+                    "primary-fixed-dim": "#dfc1a9",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#715a46"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Playfair Display"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #FAF7F2; color: #261707; }
+        .serif-italic { font-family: 'Playfair Display', serif; font-style: italic; }
+        .label-style { font-family: 'Inter', sans-serif; font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; font-weight: 400; color: #755f42; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        body {
+          min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="max-w-[390px] mx-auto min-h-screen pb-32 relative shadow-2xl bg-[#FAF7F2]">
+<!-- TopAppBar -->
+<header class="flex flex-col items-start w-full pt-12 pb-8 px-8 bg-[#FAF7F2] dark:bg-[#1A1612]">
+<div class="w-full flex justify-between items-end mb-2">
+<span class="text-xs font-normal tracking-[0.2em] text-[#755f42] uppercase">REVIEW</span>
+<span class="text-[10px] uppercase tracking-[0.2em] font-normal text-[#755f42]">MONDAY, APRIL 6, 2026</span>
+</div>
+<h1 class="serif-italic text-[22px] text-[#261707] dark:text-[#FAF7F2] leading-tight">Weekly Reflection</h1>
+</header>
+<main class="px-8 space-y-16">
+<!-- THIS WEEK Section -->
+<section>
+<h2 class="label-style mb-4">THIS WEEK</h2>
+<p class="serif-italic text-xl text-[#261707] mb-8 leading-relaxed">
+            You completed 73% of your habits this week.
+        </p>
+<!-- Week visualization -->
+<div class="flex justify-between items-center mb-12">
+<div class="flex flex-col items-center gap-2">
+<div class="w-8 h-8 bg-[#3D2B1A] border border-[#3D2B1A]"></div>
+<span class="label-style text-[8px]">MON</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-8 h-8 bg-[#3D2B1A] border border-[#3D2B1A]"></div>
+<span class="label-style text-[8px]">TUE</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-8 h-8 border border-[#D2C4BA]"></div>
+<span class="label-style text-[8px]">WED</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-8 h-8 bg-[#3D2B1A] border border-[#3D2B1A]"></div>
+<span class="label-style text-[8px]">THU</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-8 h-8 bg-[#3D2B1A] border border-[#3D2B1A]"></div>
+<span class="label-style text-[8px]">FRI</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-8 h-8 border border-[#D2C4BA]"></div>
+<span class="label-style text-[8px]">SAT</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-8 h-8 border border-[#D2C4BA]"></div>
+<span class="label-style text-[8px]">SUN</span>
+</div>
+</div>
+<!-- Inputs -->
+<div class="space-y-10">
+<div class="flex flex-col gap-2">
+<label class="label-style">WHAT WENT WELL</label>
+<textarea class="w-full bg-transparent border-t-0 border-x-0 border-b border-[#D2C4BA] focus:ring-0 focus:border-[#261707] py-2 resize-none text-sm placeholder:text-[#80756d]/50" placeholder="Write here..." rows="1"></textarea>
+</div>
+<div class="flex flex-col gap-2">
+<label class="label-style">FOCUS NEXT WEEK</label>
+<textarea class="w-full bg-transparent border-t-0 border-x-0 border-b border-[#D2C4BA] focus:ring-0 focus:border-[#261707] py-2 resize-none text-sm placeholder:text-[#80756d]/50" placeholder="Write here..." rows="1"></textarea>
+</div>
+</div>
+<button class="w-full mt-12 bg-[#3D2B1A] text-[#FAF7F2] py-5 text-center label-style tracking-[0.3em] font-bold hover:bg-[#261707] transition-colors">
+            SAVE REVIEW
+        </button>
+</section>
+<!-- THIS MONTH Section -->
+<section class="pb-12">
+<h2 class="label-style mb-8">THIS MONTH</h2>
+<div class="flex items-baseline gap-4 mb-8">
+<span class="serif-italic text-6xl text-[#261707]">73%</span>
+<span class="label-style">TOTAL RATE</span>
+</div>
+<!-- Simple Line Chart Mockup -->
+<div class="w-full h-32 relative border-b border-l border-[#D2C4BA]/30 mb-12">
+<svg class="w-full h-full" viewbox="0 0 100 40">
+<path d="M0 35 L10 30 L20 32 L30 15 L40 18 L50 10 L60 12 L70 5 L80 8 L90 2 L100 4" fill="none" stroke="#261707" stroke-width="0.5"></path>
+</svg>
+<div class="absolute bottom-[-16px] left-0 right-0 flex justify-between">
+<span class="label-style text-[7px]">WEEK 1</span>
+<span class="label-style text-[7px]">WEEK 2</span>
+<span class="label-style text-[7px]">WEEK 3</span>
+<span class="label-style text-[7px]">WEEK 4</span>
+</div>
+</div>
+<!-- Stats List -->
+<div class="space-y-6">
+<div class="flex justify-between items-end border-b border-[#D2C4BA]/20 pb-4">
+<span class="label-style">BEST STREAK</span>
+<span class="serif-italic text-xl">12 days</span>
+</div>
+<div class="flex justify-between items-end border-b border-[#D2C4BA]/20 pb-4">
+<span class="label-style">BEST HABIT</span>
+<span class="serif-italic text-xl">Reading</span>
+</div>
+<div class="flex justify-between items-end border-b border-[#D2C4BA]/20 pb-4">
+<span class="label-style">WEAKEST HABIT</span>
+<span class="serif-italic text-xl">Meditation</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 right-0 max-w-[390px] mx-auto z-50 flex justify-around items-center px-4 h-20 bg-[#FAF7F2]/80 backdrop-blur-xl border-t border-[#E5E2DD]">
+<button class="flex flex-col items-center justify-center text-[#755f42] hover:bg-[#F6F3EE] transition-colors w-1/4 h-full">
+<span class="label-style text-[9px]">TODAY</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#261707] font-bold border-b-2 border-[#261707] transition-colors w-1/4 h-full">
+<span class="label-style text-[9px] text-[#261707] font-bold">REVIEW</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#755f42] hover:bg-[#F6F3EE] transition-colors w-1/4 h-full">
+<span class="label-style text-[9px]">DASHBOARD</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#755f42] hover:bg-[#F6F3EE] transition-colors w-1/4 h-full">
+<span class="label-style text-[9px]">EDIT</span>
+</button>
+</nav>
+</body></html>
