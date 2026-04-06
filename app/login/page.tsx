@@ -2,44 +2,45 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
-import { createClient } from '@/lib/supabase/client'
+import { loginAction } from './actions'
+
+const LOGIN_TIMEOUT_MS = 10_000
 
 export default function LoginPage() {
   const [email, setEmail]       = useState('')
   const [password, setPassword] = useState('')
   const [error, setError]       = useState('')
   const [loading, setLoading]   = useState(false)
-  const router = useRouter()
 
   async function handleLogin(e: React.FormEvent) {
     e.preventDefault()
     setError('')
     setLoading(true)
 
-    const supabase = createClient()
-    const { error: authError } = await supabase.auth.signInWithPassword({ email, password })
+    const timeout = new Promise<never>((_, reject) =>
+      setTimeout(() => reject(new Error('timeout')), LOGIN_TIMEOUT_MS)
+    )
 
-    if (authError) {
-      setError(authError.message)
+    try {
+      const result = await Promise.race([loginAction(email, password), timeout])
+
+      if (result.error) {
+        setError(result.error)
+        setLoading(false)
+        return
+      }
+
+      // Full page navigation so the browser sends all cookies to the proxy
+      // and the server correctly sees the new session on the next request.
+      window.location.href = result.destination!
+    } catch (err) {
+      const msg =
+        err instanceof Error && err.message === 'timeout'
+          ? 'CONNECTION TIMEOUT. PLEASE TRY AGAIN.'
+          : 'SOMETHING WENT WRONG. PLEASE TRY AGAIN.'
+      setError(msg)
       setLoading(false)
-      return
     }
-
-    // Check if user has habits set up
-    const { data: habits } = await supabase
-      .from('habits')
-      .select('id')
-      .eq('is_active', true)
-      .limit(1)
-
-    const destination = habits && habits.length > 0 ? '/today' : '/onboarding'
-
-    // Flush the Next.js router cache so the proxy sees the new session
-    // cookies before navigating — without this the server still considers
-    // the user unauthenticated and redirects back to /login.
-    router.refresh()
-    router.push(destination)
   }
 
   return (
