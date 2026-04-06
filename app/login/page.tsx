@@ -2,25 +2,25 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { createClient } from '@/lib/supabase/client'
+import { createBrowserClient } from '@supabase/ssr'
 
 export default function LoginPage() {
-  const [email, setEmail]       = useState('')
+  const [email, setEmail]     = useState('')
   const [password, setPassword] = useState('')
-  const [error, setError]       = useState('')
-  const [loading, setLoading]   = useState(false)
-  const [debug, setDebug]       = useState('')
+  const [error, setError]     = useState('')
+  const [loading, setLoading] = useState(false)
 
   async function handleLogin(e: React.FormEvent) {
     e.preventDefault()
     setError('')
     setLoading(true)
 
-    const supabase = createClient()
-    const { data, error: authError } = await supabase.auth.signInWithPassword({ email, password })
+    const supabase = createBrowserClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+    )
 
-    console.log('AUTH RESULT:', JSON.stringify({ data, error: authError }))
-    setDebug(JSON.stringify({ data, error: authError }, null, 2))
+    const { error: authError } = await supabase.auth.signInWithPassword({ email, password })
 
     if (authError) {
       setError(authError.message)
@@ -120,25 +120,6 @@ export default function LoginPage() {
           >
             {loading ? 'ENTERING...' : 'ENTER'}
           </button>
-
-          {debug && (
-            <pre
-              style={{
-                marginTop: 24,
-                padding: 12,
-                background: '#f0ebe3',
-                border: '1px solid #C4A882',
-                fontSize: 11,
-                lineHeight: 1.5,
-                overflowX: 'auto',
-                whiteSpace: 'pre-wrap',
-                wordBreak: 'break-all',
-                color: '#3D2B1A',
-              }}
-            >
-              {debug}
-            </pre>
-          )}
         </form>
 
         <p
