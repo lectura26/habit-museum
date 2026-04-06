@@ -6,14 +6,23 @@ export function createClient() {
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
       cookieOptions: {
-        // Required on HTTPS (all Vercel deployments). sameSite 'lax'
-        // is the standard for auth cookies — allows top-level navigations.
-        // Domain is intentionally omitted so the browser uses the current
-        // hostname; hardcoding '.vercel.app' would be rejected by browsers
-        // because it is on the Public Suffix List.
         sameSite: 'lax',
         secure: true,
         path: '/',
+      },
+      auth: {
+        // Disable the IndexedDB-based lock. The lock is designed to
+        // prevent concurrent token refreshes across tabs, but on a
+        // stable production origin it can hang indefinitely if a
+        // previous call left it acquired (stale tab, failed init, etc.).
+        // Preview deployments get fresh subdomains so they never hit
+        // the stale lock — which is why auth works there but not on
+        // the production URL.
+        lock: undefined,
+        // Isolate storage from any stale tokens that may have been
+        // written by older versions of the client.
+        storageKey: 'habit-museum-auth',
+        flowType: 'pkce',
       },
     }
   )
