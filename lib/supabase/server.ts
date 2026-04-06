@@ -8,6 +8,11 @@ export async function createClient() {
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
+      cookieOptions: {
+        sameSite: 'lax',
+        secure: true,
+        path: '/',
+      },
       cookies: {
         getAll() {
           return cookieStore.getAll()
@@ -18,7 +23,8 @@ export async function createClient() {
               cookieStore.set(name, value, options)
             )
           } catch {
-            // Server component — cookies can only be set in middleware/route handlers
+            // Server component — cookies can only be set in server actions
+            // and route handlers, not during render. This is expected.
           }
         },
       },
