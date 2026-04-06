@@ -34,11 +34,16 @@ export default function LoginPage() {
       // and the server correctly sees the new session on the next request.
       window.location.href = result.destination!
     } catch (err) {
-      const msg =
-        err instanceof Error && err.message === 'timeout'
-          ? 'CONNECTION TIMEOUT. PLEASE TRY AGAIN.'
-          : 'SOMETHING WENT WRONG. PLEASE TRY AGAIN.'
-      setError(msg)
+      // This catch only fires for the timeout race rejection or an
+      // unexpected client-side throw — the server action itself now
+      // always returns { error } instead of throwing.
+      if (err instanceof Error && err.message === 'timeout') {
+        setError('CONNECTION TIMEOUT. PLEASE TRY AGAIN.')
+      } else {
+        const msg = err instanceof Error ? err.message : String(err)
+        console.error('[login] unexpected catch:', msg, err)
+        setError(msg || 'SOMETHING WENT WRONG. PLEASE TRY AGAIN.')
+      }
       setLoading(false)
     }
   }
