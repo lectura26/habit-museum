@@ -19,7 +19,7 @@ export default function LoginPage() {
     const { error: authError } = await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: 'https://habit-museum.vercel.app/auth/callback',
+        redirectTo: `${window.location.origin}/auth/callback`,
       },
     })
 
