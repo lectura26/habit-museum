@@ -5,13 +5,10 @@ import Link from 'next/link'
 import { createBrowserClient } from '@supabase/ssr'
 
 export default function LoginPage() {
-  const [email, setEmail]     = useState('')
-  const [password, setPassword] = useState('')
-  const [error, setError]     = useState('')
+  const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
 
-  async function handleLogin(e: React.FormEvent) {
-    e.preventDefault()
+  async function handleGoogleLogin() {
     setError('')
     setLoading(true)
 
@@ -20,15 +17,17 @@ export default function LoginPage() {
       process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
     )
 
-    const { error: authError } = await supabase.auth.signInWithPassword({ email, password })
+    const { error: authError } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        redirectTo: 'https://habit-museum.vercel.app/auth/callback',
+      },
+    })
 
     if (authError) {
       setError(authError.message)
       setLoading(false)
-      return
     }
-
-    window.location.href = '/today'
   }
 
   return (
@@ -61,41 +60,7 @@ export default function LoginPage() {
           </h1>
         </div>
 
-        <form onSubmit={handleLogin}>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 32, marginBottom: 40 }}>
-            <div>
-              <label className="label" htmlFor="email" style={{ display: 'block', marginBottom: 8 }}>
-                EMAIL
-              </label>
-              <input
-                id="email"
-                type="email"
-                autoComplete="email"
-                required
-                className="input-line"
-                placeholder="your@email.com"
-                value={email}
-                onChange={e => setEmail(e.target.value)}
-              />
-            </div>
-
-            <div>
-              <label className="label" htmlFor="password" style={{ display: 'block', marginBottom: 8 }}>
-                PASSWORD
-              </label>
-              <input
-                id="password"
-                type="password"
-                autoComplete="current-password"
-                required
-                className="input-line"
-                placeholder="••••••••"
-                value={password}
-                onChange={e => setPassword(e.target.value)}
-              />
-            </div>
-          </div>
-
+        <div>
           {error && (
             <p
               className="font-ui"
@@ -113,14 +78,19 @@ export default function LoginPage() {
           )}
 
           <button
-            type="submit"
+            type="button"
             className="btn-primary"
+            onClick={handleGoogleLogin}
             disabled={loading}
-            style={{ opacity: loading ? 0.6 : 1 }}
+            style={{
+              background: '#3D2B1A',
+              color: '#FAF7F2',
+              opacity: loading ? 0.6 : 1,
+            }}
           >
-            {loading ? 'ENTERING...' : 'ENTER'}
+            {loading ? 'REDIRECTING...' : 'CONTINUE WITH GOOGLE'}
           </button>
-        </form>
+        </div>
 
         <p
           className="font-ui"
