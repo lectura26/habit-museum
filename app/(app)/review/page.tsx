@@ -22,7 +22,7 @@ export default async function ReviewPage() {
     { data: intentions },
     { data: weeklyReview },
   ] = await Promise.all([
-    supabase.from('profiles').select('*').eq('id', user.id).single(),
+    supabase.from('profiles').select('*').eq('user_id', user.id).single(),
     supabase.from('habits').select('*').eq('user_id', user.id).eq('is_active', true),
     supabase.from('habit_completions')
       .select('date, habit_id')

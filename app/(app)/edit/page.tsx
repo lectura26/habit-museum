@@ -17,7 +17,7 @@ export default async function EditPage() {
     { data: metrics },
     { data: weeklyReview },
   ] = await Promise.all([
-    supabase.from('profiles').select('*').eq('id', user.id).single(),
+    supabase.from('profiles').select('*').eq('user_id', user.id).single(),
     supabase.from('habits').select('*').eq('user_id', user.id).order('display_order'),
     supabase.from('user_metrics').select('*').eq('user_id', user.id).order('display_order'),
     supabase.from('weekly_reviews').select('*').eq('user_id', user.id).eq('week_start', weekStart).single(),
