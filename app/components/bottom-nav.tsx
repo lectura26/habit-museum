@@ -22,10 +22,8 @@ export default function BottomNav({ reviewDone = true }: TopNavProps) {
   return (
     <nav
       style={{
-        position: 'fixed',
+        position: 'sticky',
         top: 0,
-        left: 0,
-        right: 0,
         background: 'var(--bg-primary)',
         borderBottom: '1px solid var(--border)',
         display: 'flex',
