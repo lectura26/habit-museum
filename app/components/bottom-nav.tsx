@@ -11,11 +11,11 @@ const NAV_ITEMS = [
   { label: 'EDIT',      href: '/edit' },
 ]
 
-interface BottomNavProps {
+interface TopNavProps {
   reviewDone?: boolean
 }
 
-export default function BottomNav({ reviewDone = true }: BottomNavProps) {
+export default function BottomNav({ reviewDone = true }: TopNavProps) {
   const pathname = usePathname()
   const showPulse = isSundayAfter6PM() && !reviewDone
 
@@ -23,15 +23,15 @@ export default function BottomNav({ reviewDone = true }: BottomNavProps) {
     <nav
       style={{
         position: 'fixed',
-        bottom: 0,
+        top: 0,
         left: 0,
         right: 0,
         background: 'var(--bg-primary)',
-        borderTop: '1px solid var(--border)',
+        borderBottom: '1px solid var(--border)',
         display: 'flex',
         justifyContent: 'space-around',
         alignItems: 'center',
-        padding: '12px 0 20px',
+        padding: '14px 0 12px',
         zIndex: 50,
       }}
     >
@@ -46,11 +46,22 @@ export default function BottomNav({ reviewDone = true }: BottomNavProps) {
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              gap: 6,
+              gap: 5,
               textDecoration: 'none',
               position: 'relative',
             }}
           >
+            <span
+              className="font-ui"
+              style={{
+                fontSize: 9,
+                textTransform: 'uppercase',
+                letterSpacing: '0.15em',
+                color: active ? 'var(--text-primary)' : 'var(--text-muted)',
+              }}
+            >
+              {label}
+            </span>
             {active && (
               <span
                 style={{
@@ -66,8 +77,8 @@ export default function BottomNav({ reviewDone = true }: BottomNavProps) {
               <span
                 className="pulse-dot"
                 style={{
-                  width: 6,
-                  height: 6,
+                  width: 5,
+                  height: 5,
                   borderRadius: '50%',
                   background: 'var(--accent-light)',
                   display: 'block',
@@ -77,17 +88,6 @@ export default function BottomNav({ reviewDone = true }: BottomNavProps) {
             {!active && !(isReview && showPulse) && (
               <span style={{ height: 3, width: 3 }} />
             )}
-            <span
-              className="font-ui"
-              style={{
-                fontSize: 9,
-                textTransform: 'uppercase',
-                letterSpacing: '0.15em',
-                color: active ? 'var(--text-primary)' : 'var(--text-muted)',
-              }}
-            >
-              {label}
-            </span>
           </Link>
         )
       })}

@@ -40,6 +40,14 @@ export default function TodayClient({
   const supabaseRef = useRef(createClient())
   const supabase = supabaseRef.current
 
+  const [saveError, setSaveError] = useState<string | null>(null)
+
+  async function checked(promise: PromiseLike<{ error: { message: string } | null }>) {
+    const result = await promise
+    if (result.error) setSaveError(result.error.message)
+    else setSaveError(null)
+  }
+
   // ─── Submit Day ──────────────────────────────────────────────
   const [submitted, setSubmitted] = useState(alreadySubmitted)
   const [submitting, setSubmitting] = useState(false)
@@ -51,7 +59,8 @@ export default function TodayClient({
       .from('profiles')
       .update({ last_submitted_date: today })
       .eq('user_id', userId)
-    if (!error) setSubmitted(true)
+    if (error) setSaveError(error.message)
+    else setSubmitted(true)
     setSubmitting(false)
   }
 
@@ -70,16 +79,16 @@ export default function TodayClient({
     })
 
     if (wasChecked) {
-      await supabase
+      await checked(supabase
         .from('habit_completions')
         .delete()
         .eq('user_id', userId)
         .eq('habit_id', habitId)
-        .eq('date', today)
+        .eq('date', today))
     } else {
-      await supabase
+      await checked(supabase
         .from('habit_completions')
-        .upsert({ user_id: userId, habit_id: habitId, date: today, completed: true })
+        .upsert({ user_id: userId, habit_id: habitId, date: today, completed: true }))
     }
   }
 
@@ -197,6 +206,14 @@ export default function TodayClient({
 
   return (
     <main className="page-content animate-fade-in" style={{ padding: '0 28px' }}>
+
+      {saveError && (
+        <div style={{ padding: '10px 0' }}>
+          <p className="font-ui" style={{ fontSize: 11, color: '#c0392b', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+            SAVE ERROR: {saveError}
+          </p>
+        </div>
+      )}
 
       {/* ── SECTION 1: HABITS ─────────────────────────────────── */}
       <div className="section-block animate-fade-up stagger-1">

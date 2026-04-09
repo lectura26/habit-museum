@@ -316,7 +316,8 @@ input[type="range"]::-moz-range-thumb {
 }
 .section-block:first-child { border-top: none; }
 
-/* ─── Nav bottom safe area ───────────────────────────────────── */
+/* ─── Nav top safe area ──────────────────────────────────────── */
 .page-content {
-  padding-bottom: 80px;
+  padding-top: 52px;
+  padding-bottom: 40px;
 }
