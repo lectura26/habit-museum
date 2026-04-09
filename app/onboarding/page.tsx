@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, KeyboardEvent } from 'react'
-import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import type { MetricType, Language } from '@/lib/types/database'
 import { DEFAULT_EMOTIONS } from '@/lib/types/database'
@@ -70,7 +69,6 @@ const i18n: Record<Language, Record<string, string>> = {
 }
 
 export default function OnboardingPage() {
-  const router = useRouter()
   const [step, setStep]         = useState<Step>(1)
   const [lang, setLang]         = useState<Language>('en')
   const [habits, setHabits]     = useState<NewHabit[]>([])
@@ -123,7 +121,7 @@ export default function OnboardingPage() {
       // network round-trip) so this works reliably right after OAuth redirect.
       const { data: { session } } = await supabase.auth.getSession()
       const user = session?.user
-      if (!user) { router.push('/login'); return }
+      if (!user) { window.location.href = '/login'; return }
 
       // Upsert profile
       const { error: profileError } = await supabase.from('profiles').upsert({
@@ -166,7 +164,7 @@ export default function OnboardingPage() {
         if (metricError) throw new Error(`Check-ins: ${metricError.message}`)
       }
 
-      router.push('/today')
+      window.location.href = '/today'
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.')
       setSaving(false)
