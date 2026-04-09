@@ -119,8 +119,11 @@ export default function OnboardingPage() {
 
     try {
       const supabase = createClient()
-      const { data: { user }, error: authError } = await supabase.auth.getUser()
-      if (authError || !user) { router.push('/login'); return }
+      // Use getSession() (reads local storage) instead of getUser() (makes a
+      // network round-trip) so this works reliably right after OAuth redirect.
+      const { data: { session } } = await supabase.auth.getSession()
+      const user = session?.user
+      if (!user) { router.push('/login'); return }
 
       // Upsert profile
       const { error: profileError } = await supabase.from('profiles').upsert({
