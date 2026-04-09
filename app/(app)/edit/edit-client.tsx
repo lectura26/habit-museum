@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, KeyboardEvent } from 'react'
+import { useState, useRef, KeyboardEvent } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import type { Habit, UserMetric, MetricType } from '@/lib/types/database'
 import { DEFAULT_EMOTIONS } from '@/lib/types/database'
@@ -33,7 +33,16 @@ export default function EditClient({
   weeklyGoals: initialGoals,
   weekStart,
 }: EditClientProps) {
-  const supabase = createClient()
+  const supabaseRef = useRef(createClient())
+  const supabase = supabaseRef.current
+
+  const [writeError, setWriteError] = useState<string | null>(null)
+
+  async function checked(promise: PromiseLike<{ error: { message: string } | null }>) {
+    const result = await promise
+    if (result.error) setWriteError(result.error.message)
+    else setWriteError(null)
+  }
 
   // ─── Habits state ───────────────────────────────────────────
   const [habits, setHabits]           = useState<Habit[]>(initialHabits)
@@ -48,17 +57,17 @@ export default function EditClient({
     if (!trimmed) return
     setHabits(prev => prev.map(h => h.id === id ? { ...h, name: trimmed } : h))
     setEditingHabitId(null)
-    await supabase.from('habits').update({ name: trimmed }).eq('id', id)
+    await checked(supabase.from('habits').update({ name: trimmed }).eq('id', id))
   }
 
   async function toggleHabitActive(id: string, is_active: boolean) {
     setHabits(prev => prev.map(h => h.id === id ? { ...h, is_active } : h))
-    await supabase.from('habits').update({ is_active }).eq('id', id)
+    await checked(supabase.from('habits').update({ is_active }).eq('id', id))
   }
 
   async function deleteHabit(id: string) {
     setHabits(prev => prev.filter(h => h.id !== id))
-    await supabase.from('habits').delete().eq('id', id)
+    await checked(supabase.from('habits').delete().eq('id', id))
   }
 
   async function addHabit() {
@@ -74,13 +83,14 @@ export default function EditClient({
         name,
         is_active: true,
         display_order: habits.length,
-        category: null,       // nullable after align migration — prevents not-null violation
+        category: null,
       })
       .select()
       .single()
 
     if (error) {
       setHabitError(error.message)
+      setWriteError(error.message)
     } else if (data) {
       setHabits(prev => [...prev, data])
       setNewHabitName('')
@@ -104,17 +114,17 @@ export default function EditClient({
     if (!trimmed) return
     setMetrics(prev => prev.map(m => m.id === id ? { ...m, metric_name: trimmed } : m))
     setEditingMetricId(null)
-    await supabase.from('user_metrics').update({ metric_name: trimmed }).eq('id', id)
+    await checked(supabase.from('user_metrics').update({ metric_name: trimmed }).eq('id', id))
   }
 
   async function toggleMetricActive(id: string, is_active: boolean) {
     setMetrics(prev => prev.map(m => m.id === id ? { ...m, is_active } : m))
-    await supabase.from('user_metrics').update({ is_active }).eq('id', id)
+    await checked(supabase.from('user_metrics').update({ is_active }).eq('id', id))
   }
 
   async function deleteMetric(id: string) {
     setMetrics(prev => prev.filter(m => m.id !== id))
-    await supabase.from('user_metrics').delete().eq('id', id)
+    await checked(supabase.from('user_metrics').delete().eq('id', id))
   }
 
   async function addMetric() {
@@ -135,7 +145,7 @@ export default function EditClient({
       .select()
       .single()
     if (error) {
-      console.error('user_metrics insert error:', error.message)
+      setWriteError(error.message)
     } else if (data) {
       setMetrics(prev => [...prev, data])
     }
@@ -152,7 +162,7 @@ export default function EditClient({
     const updated = [...(metric.emotion_options ?? []), word]
     setMetrics(prev => prev.map(m => m.id === metricId ? { ...m, emotion_options: updated } : m))
     setNewEmotionInputs(prev => ({ ...prev, [metricId]: '' }))
-    await supabase.from('user_metrics').update({ emotion_options: updated }).eq('id', metricId)
+    await checked(supabase.from('user_metrics').update({ emotion_options: updated }).eq('id', metricId))
   }
 
   async function removeEmotion(metricId: string, word: string) {
@@ -160,7 +170,7 @@ export default function EditClient({
     if (!metric) return
     const updated = (metric.emotion_options ?? []).filter(e => e !== word)
     setMetrics(prev => prev.map(m => m.id === metricId ? { ...m, emotion_options: updated } : m))
-    await supabase.from('user_metrics').update({ emotion_options: updated }).eq('id', metricId)
+    await checked(supabase.from('user_metrics').update({ emotion_options: updated }).eq('id', metricId))
   }
 
   // ─── Default to-do count ────────────────────────────────────
@@ -168,7 +178,7 @@ export default function EditClient({
 
   async function updateDefaultTodo(val: number) {
     setDefaultTodo(val)
-    await supabase.from('profiles').update({ default_todo_count: val }).eq('user_id', userId)
+    await checked(supabase.from('profiles').update({ default_todo_count: val }).eq('user_id', userId))
   }
 
   // ─── Weekly goals ───────────────────────────────────────────
@@ -181,13 +191,13 @@ export default function EditClient({
     const updated = [...goals, g]
     setGoals(updated)
     setGoalInput('')
-    await supabase.from('weekly_reviews').upsert({ user_id: userId, week_start: weekStart, goals: updated })
+    await checked(supabase.from('weekly_reviews').upsert({ user_id: userId, week_start: weekStart, goals: updated }))
   }
 
   async function removeGoal(i: number) {
     const updated = goals.filter((_, j) => j !== i)
     setGoals(updated)
-    await supabase.from('weekly_reviews').upsert({ user_id: userId, week_start: weekStart, goals: updated })
+    await checked(supabase.from('weekly_reviews').upsert({ user_id: userId, week_start: weekStart, goals: updated }))
   }
 
   function activeToggle(isActive: boolean, onToggle: (val: boolean) => void) {
@@ -224,6 +234,14 @@ export default function EditClient({
 
   return (
     <main className="page-content animate-fade-in" style={{ padding: '0 28px' }}>
+
+      {writeError && (
+        <div style={{ padding: '12px 0', marginBottom: 8 }}>
+          <p className="font-ui" style={{ fontSize: 11, color: '#c0392b', textTransform: 'uppercase', letterSpacing: '0.1em', lineHeight: 1.6 }}>
+            ERROR: {writeError}
+          </p>
+        </div>
+      )}
 
       {/* ── YOUR HABITS ───────────────────────────────────────── */}
       <div className="section-block animate-fade-up stagger-1">
